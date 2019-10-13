@@ -1,7 +1,7 @@
 --drop tables
+DROP TABLE IF EXISTS UserPermissions;
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Systems;
-DROP TABLE IF EXISTS UserPermissions;
 DROP TABLE IF EXISTS PermissionTypes;
 DROP TABLE IF EXISTS Devices;
 DROP TABLE IF EXISTS Categories;
@@ -9,6 +9,7 @@ DROP TABLE IF EXISTS Sensors;
 DROP TABLE IF EXISTS Actuators;
 DROP TABLE IF EXISTS Locals;
 DROP TABLE IF EXISTS OperationalStatus;
+
 
 -- users table
 CREATE TABLE Users
@@ -37,9 +38,9 @@ CREATE TABLE PermissionTypes(
 CREATE TABLE UserPermissions
 (
     permid INTEGER NOT NULL PRIMARY KEY,
-    userid INTEGER REFERENCES Users(userid),
-    sysid INTEGER REFERENCES Systems(sysid),
-    permid INTEGER REFERENCES PermissionTypes(permtypeid)
+    userid INTEGER NOT NULL REFERENCES Users(userid),
+    sysid INTEGER NOT NULL REFERENCES Systems(sysid),
+    permtypeid INTEGER NOT NULL REFERENCES PermissionTypes(permtypeid)
 );
 
 -- Status table
@@ -60,7 +61,7 @@ CREATE TABLE Devices
     swversion TEXT NOT NULL,
     swartefact TEXT NOT NULL,
     ip TEXT NOT NULL,
-    statid INTEGER REFERENCES OperationalStatus(opstatid)
+    statid INTEGER  NOT NULL REFERENCES OperationalStatus(opstatid)
 
 );
 
@@ -79,7 +80,7 @@ CREATE TABLE Sensors(
     units TEXT NOT NULL,
     periodicity TEXT NOT NULL,
     code TEXT NOT NULL,
-    statid INTEGER REFERENCES OperationalStatus(opstatid),
+    statid INTEGER  NOT NULL REFERENCES OperationalStatus(opstatid)
 );
 
 -- Actuators Table
@@ -87,7 +88,7 @@ CREATE TABLE Actuators(
     actid INTEGER NOT NULL PRIMARY KEY,
     actname TEXT NOT NULL,
     code TEXT NOT NULL,
-    statid INTEGER REFERENCES OperationalStatus(opstatid),
+    statid INTEGER  NOT NULL REFERENCES OperationalStatus(opstatid)
 );
 
 -- Locals tables
@@ -101,7 +102,3 @@ CREATE TABLE Locals(
     floor TEXT NOT NULL,
     room TEXT NOT NULL
 );
-
-
-
-
