@@ -99,6 +99,6 @@ CREATE TABLE Locals(
     zip TEXT NOT NULL,
     street TEXT NOT NULL,
     building TEXT NOT NULL,
-    floor TEXT NOT NULL,
+    floordesc TEXT NOT NULL,
     room TEXT NOT NULL
 );
