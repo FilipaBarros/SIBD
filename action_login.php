@@ -5,23 +5,32 @@
     $password= $_POST['password'];
 
     function correctLogin($user, $pass){
+        $isValid = false;
         global $dataB;
-        try{
-            $statement = $dataB->prepare("SELECT * FROM Users WHERE username = ? AND passphrase = ?;");
-            $statement->bind_param("ss", $user, sha1($pass));
-            $statement->execute();
-            $statement->fetch()!==false;
-        }  catch (Exception $err) {
-            echo $err;
+        if($statement = $dataB->prepare("SELECT * FROM Users WHERE username = ? AND passphrase = ?")){
+            //$statement->bindParam(":user", $user);
+            $passhash = sha1($pass);
+            //$statement->bindParam(":pass", $passhash);
+            
+            $statement->execute(array($user, $passhash));
+            if(sizeof($statement->fetchAll()) > 0){
+                $isValid = true;
+            }
+        } else {
+            die("Error on query");
         }
+        return $isValid;
     }
+   
+    if(correctLogin($username, $password) == true){
 
-    if(correctLogin($username, $password)){
         $_SESSION['username'] = $username;
-        header('Location: welcomePage.php');
+        header('Location: welcome_page.php?user='.$username);
+        exit();
     }
     else{
         header('Location: login_page.php');
+        exit();
     }
     
 ?>
