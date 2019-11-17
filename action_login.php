@@ -7,8 +7,8 @@
     function correctLogin($user, $pass){
         global $dataB;
         try{
-            $statement = $dataB->prepare("SELECT * FROM Users WHERE username = ? AND passphrase = ?");
-            $statement->bind_param("ss", $user, $pass);
+            $statement = $dataB->prepare("SELECT * FROM Users WHERE username = ? AND passphrase = ?;");
+            $statement->bind_param("ss", $user, sha1($pass));
             $statement->execute();
             $statement->fetch()!==false;
         }  catch (Exception $err) {
