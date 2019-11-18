@@ -1,27 +1,21 @@
-<?php
-    require_once('config/init.php');
-?>
-
-
 <!DOCTYPE html>
     <html>
         <head>
             <meta charset="utf-8">
-            <title>DLS Register</title>
+            <title>DLS Login</title>
         </head>
         <body>    
-        <section id="register">
+            <section id="login">
                 <?php
-                    $title = "Register";
+                    $title = "Login";
                     echo "<h2>".$title."</h2>";
                 ?>
-                <form action="action_register.php" method="post">
+                <form action="action_login.php" method="post">
                     <p>Username: <input type="text" name="username" placeholder="Username" required></p>
                     <p>Password: <input type="password" name="password" placeholder="Password" required></p>
-                    <p>&nbsp &nbsp &nbsp  Email: <input type="email" name="emailaddress" placeholder="Email" required></p>
-                    <input type="submit" value="Register">
+                    <input type="submit" value="Login">
                 </form>
                 
-            </section> 
+            </section>    
         </body>
     </html>
