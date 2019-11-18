@@ -12,7 +12,7 @@
     function newLocal($country, $city, $zip, $street, $building, $floor, $room){
         global $dataB;
         $statement = $dataB->prepare('INSERT INTO Locals(country,city,zip,street,building,floordesc,room) VALUES (?,?,?,?,?,?,?)');
-        $statement->execute(array($country, $city,$zip,$street,$building,$floor,$room,$local));
+        $statement->execute(array($country, $city,$zip,$street,$building,$floor,$room));
         print_r($statement);
     }
 
