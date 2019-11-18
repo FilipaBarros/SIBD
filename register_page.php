@@ -1,3 +1,8 @@
+<?php
+    require_once('config/init.php');
+?>
+
+
 <!DOCTYPE html>
     <html>
         <head>
@@ -11,9 +16,9 @@
                     echo "<h2>".$title."</h2>";
                 ?>
                 <form action="action_register.php" method="post">
-                    <input type="text" name="username" placeholder="Username" required>
-                    <input type="password" name="password" placeholder="Password" required>
-                    <input type="email" name="emailaddress" placeholder="Email" required>
+                    <p>Username: <input type="text" name="username" placeholder="Username" required></p>
+                    <p>Password: <input type="password" name="password" placeholder="Password" required></p>
+                    <p>&nbsp &nbsp &nbsp  Email: <input type="email" name="emailaddress" placeholder="Email" required></p>
                     <input type="submit" value="Register">
                 </form>
                 
