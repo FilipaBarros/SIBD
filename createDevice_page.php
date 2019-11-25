@@ -9,7 +9,9 @@
             <meta charset="utf-8">
             <title>Create Device</title>
         </head>
-        <body>    
+        <body>  
+        <?php include ('header.php') ?> 
+        <?php if (isset($_SESSION['username'])) { ?> 
         <section id="createDevice">
                 <?php
                     $title = "Create Device";
@@ -38,5 +40,6 @@
                 </form>
                 
             </section> 
+            <?php } ?>  
         </body>
     </html>
