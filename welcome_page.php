@@ -15,6 +15,7 @@
                 <span><?=$_SESSION['username']?></span>
                 <input type="submit" value="Logout">
             </form>
+            <a href="userActions_page.php">User Management</a>
             </header> 
             <?php } ?>
            

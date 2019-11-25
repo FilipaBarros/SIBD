@@ -9,7 +9,15 @@
             <meta charset="utf-8">
             <title>DLS Register</title>
         </head>
-        <body>    
+        <body>  
+        <header>
+            <?php if (isset($_SESSION['username'])) { ?>
+            <form class="logout" action="action_logout.php">
+                <span><?=$_SESSION['username']?></span>
+                <input type="submit" value="Logout">
+            </form>
+            <a href="userActions_page.php">User Management</a>
+        </header>   
         <section id="register">
                 <?php
                     $title = "Register";
@@ -23,5 +31,6 @@
                 </form>
                 
             </section> 
+            <?php } ?>
         </body>
     </html>
