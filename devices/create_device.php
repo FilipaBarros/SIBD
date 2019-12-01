@@ -25,6 +25,17 @@
 
                 ?>
             </select></p>
+            <p>System ID: <select name ="system" value="<?php echo $res['sysid']?>"required>
+                <?php
+                global $dataB;
+                $queryLocal = "SELECT sysid FROM Systems";
+                $result = $dataB->query($queryLocal);
+                while ($row = $result->fetch()) {
+                    echo "<option value=\"system\">" . $row['sysid'] . "</option>";
+                }
+
+                ?>
+            </select></p>
             <input type="submit" value="Create">
         </form>
         

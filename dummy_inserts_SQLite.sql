@@ -54,10 +54,10 @@ INSERT INTO Locals (locid,country, city, zip, street, building, floordesc, room)
 
 
 --devices table 
-INSERT INTO Devices (devid, devname, manufacturer, devdescription, swversion, swartefact, ip, stat, locid) VALUES (1,'printer1', 'manufacturer1','description description description', 'v1.0.1', 'free rtos','0.0.0.1','working',1);
-INSERT INTO Devices (devid, devname, manufacturer, devdescription, swversion, swartefact, ip, stat, locid) VALUES (2,'printer2', 'manufacturer1','description description description', 'v1.0.1', 'free rtos','0.0.0.2','working',2);
-INSERT INTO Devices (devid, devname, manufacturer, devdescription, swversion, swartefact, ip, stat, locid) VALUES (3,'coffeemachine1', 'manufacturer2','description description description', 'v1.0.1', 'free rtos','0.0.0.3','working',2);
-INSERT INTO Devices (devid, devname, manufacturer, devdescription, swversion, swartefact, ip, stat, locid) VALUES (4,'sprinkler1', 'manufacturer3','description description description', 'v1.0.1', 'free rtos','0.0.0.4','working',3);
+INSERT INTO Devices (devid, devname, manufacturer, devdescription, swversion, swartefact, ip, stat, locid, sysid) VALUES (1,'printer1', 'manufacturer1','description description description', 'v1.0.1', 'free rtos','0.0.0.1','working',1,1);
+INSERT INTO Devices (devid, devname, manufacturer, devdescription, swversion, swartefact, ip, stat, locid, sysid) VALUES (2,'printer2', 'manufacturer1','description description description', 'v1.0.1', 'free rtos','0.0.0.2','working',2,1);
+INSERT INTO Devices (devid, devname, manufacturer, devdescription, swversion, swartefact, ip, stat, locid, sysid) VALUES (3,'coffeemachine1', 'manufacturer2','description description description', 'v1.0.1', 'free rtos','0.0.0.3','working',2,2);
+INSERT INTO Devices (devid, devname, manufacturer, devdescription, swversion, swartefact, ip, stat, locid, sysid) VALUES (4,'sprinkler1', 'manufacturer3','description description description', 'v1.0.1', 'free rtos','0.0.0.4','working',3,3);
 
 
 
@@ -89,24 +89,3 @@ INSERT INTO Actuators (actid, func, compname, compcode, stat) VALUES (3, 'activa
 
 -- devices components tables 
 INSERT INTO DevicesComponents(devcompid, devid, compid) VALUES (1,4,3);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

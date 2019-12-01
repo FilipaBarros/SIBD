@@ -10,6 +10,7 @@ function get_table()
 }
 ?>
 <h2>Locations</h2>
+<table>
 <?php
 $res = get_table();
 echo " <tr> ";
@@ -29,8 +30,8 @@ foreach ($res as $row) {
     for ($j = 0; $j < 8; $j++) { // we're expecting eight attributes
         echo "<td> " . $row[$j] . " </td>"; // gives the current item of the current attribute
     }
-    echo "  <td><a href='index.php?id=" . $row[0] . "'>Edit</a></td>";
-    echo "  <td><a href='index.php?id=" . $row[0] . "'>Delete</a></td>";
+    echo " <td><a href='index.php?id=" . $row[0] . "'>Edit</a>";
+    echo " <a href='index.php?id=" . $row[0] . "'>Delete</a></td>";
     echo "<br>";
     echo "</tr>";
 }
@@ -38,5 +39,5 @@ foreach ($res as $row) {
     //    echo $row["country"] . "<br>";
     //}
 ?>
-
+</table>
 <?php include('../partials/footer.php'); ?>

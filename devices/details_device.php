@@ -68,22 +68,21 @@ CREATE TABLE Actuators(
 
 <?php
     $device_id = $_GET['id']; 
-    require_once('config/init.php');
-    function get_table_devices_categories()
+    function get_table_devices_categories($device_id)
     {
         global $dataB;
-        $statement = $dataB->prepare("SELECT catid from DevicesCategories where 'devid='$device_id");
-        $statement->execute();
+        $statement = $dataB->prepare("SELECT catid from DevicesCategories where devid=?");
+        $statement->execute(array($device_id));
         $categories = $statement->fetchAll();
         return $categories;
     }
 ?>
-<h2>Edit Device</h2>
+<h2>Device</h2>
 <?php
-    $res = get_table_devices_categories();
+    $res = get_table_devices_categories($device_id);
     echo "Categories"."<br>";
     foreach($res as $row){
-        echo $row."<br>";
+        print_r($row);
     }
 ?>
 <?php include('../partials/footer.php'); ?> 
