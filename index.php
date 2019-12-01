@@ -11,6 +11,5 @@
                 echo "<p>".$title."</p>";       
             ?>
             <a href="login_page.php">Login</a>
-            <a href="register_page.php">Register</a>
         </body>
     </html>

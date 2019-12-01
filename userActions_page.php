@@ -9,7 +9,10 @@
             <title>Device Lookup Service</title>
         </head>
         <body>   
-        <?php include ('header.php') ?>  
+            <?php include ('header.php') ?>  
+            <?php if (isset($_SESSION['username'])) { ?> 
+                    <a href="register_page.php"><p>Create New User</p></a>
+            <?php } ?>
            
         </body>
     </html>
