@@ -1,5 +1,5 @@
 <?php include ('../partials/header.php') ?>    
-<section id="createDevice">
+<section id="createLocation">
     <?php
         $title = "Create Local";
         echo "<h2>" . $title . "</h2>";
