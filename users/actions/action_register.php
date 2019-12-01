@@ -1,5 +1,5 @@
 <?php
-    require_once('config/init.php');
+    require_once('../../config/init.php');
 
     $username=$_POST['username'];
     $password=$_POST['password'];
@@ -13,7 +13,7 @@
     }
 
     newUser($username, $password, $email);
-    header('Location: login_page.php');
+    header('Location: ../login_page.php');
     
    // catch(PDOException $e){
    //     header('Location: register_page.php');

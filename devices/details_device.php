@@ -1,16 +1,3 @@
-<?php
-    $device_id = $_GET['id']; 
-    require_once('config/init.php');
-    function get_table_devices_categories()
-    {
-        global $dataB;
-        $statement = $dataB->prepare("SELECT catid from DevicesCategories where 'devid='$device_id");
-        $statement->execute();
-        $categories = $statement->fetchAll();
-        return $categories;
-    }
-?>
-
 <!-- What we want to get show for each device: 
     The components which are: sensors and actuators 
     The Categories it bellongs to 
@@ -77,20 +64,26 @@ CREATE TABLE Actuators(
 	FOREIGN KEY (actid) REFERENCES Components(compid)
 );
  -->
+<?php include('../partials/header.php'); ?> 
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Edit Device</title>
-    </head>
-    <body>
-    <h2>Edit Device</h2>
-        <?php
-            $res = get_table_devices_categories();
-            echo "Categories"."<br>";
-            foreach($res as $row){
-                echo $row."<br>";
-            }
-        ?>
-    </body>
-</html>
+<?php
+    $device_id = $_GET['id']; 
+    require_once('config/init.php');
+    function get_table_devices_categories()
+    {
+        global $dataB;
+        $statement = $dataB->prepare("SELECT catid from DevicesCategories where 'devid='$device_id");
+        $statement->execute();
+        $categories = $statement->fetchAll();
+        return $categories;
+    }
+?>
+<h2>Edit Device</h2>
+<?php
+    $res = get_table_devices_categories();
+    echo "Categories"."<br>";
+    foreach($res as $row){
+        echo $row."<br>";
+    }
+?>
+<?php include('../partials/footer.php'); ?> 

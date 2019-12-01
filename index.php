@@ -10,6 +10,6 @@
                 $title = "Device Lookup Service";
                 echo "<p>".$title."</p>";       
             ?>
-            <a href="login_page.php">Login</a>
+            <a href="users/login_page.php">Login</a>
         </body>
     </html>

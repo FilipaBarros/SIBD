@@ -1,5 +1,5 @@
 <?php
-    require_once('config/init.php');
+    require_once('../../config/init.php');
 
     $username= $_POST['username'];
     $password= $_POST['password'];
@@ -25,11 +25,11 @@
     if(correctLogin($username, $password) == true){
 
         $_SESSION['username'] = $username;
-        header('Location: welcome_page.php?user='.$username);
+        header('Location: ../../welcome_page.php?user='.$username);
         exit();
     }
     else{
-        header('Location: login_page.php');
+        header('Location: ../login_page.php');
         exit();
     }
     

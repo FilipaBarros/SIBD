@@ -1,5 +1,5 @@
 <?php
-    require_once('config/init.php');
+    require_once('../../config/init.php');
 
     $deviceName=$_POST['deviceName'];
     $manufacturer=$_POST['manufacturer'];
@@ -18,7 +18,7 @@
     }
 
     newDevice($deviceName,$manufacturer,$description,$swversion,$swartefact,$ip,$statu,$local);
-    header('Location: welcome_page.php');
+    header('Location: ../../welcome_page.php');
     
    // catch(PDOException $e){
    //     header('Location: register_page.php');
