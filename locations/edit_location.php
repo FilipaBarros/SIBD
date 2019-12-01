@@ -15,7 +15,7 @@
         $res = get_table($id)[0];
         //print_r($res);
         ?>
-        <form action="actions/action_edit_device.php?id=<?php echo $_GET["id"]?>" method="post">
+        <form action="actions/action_edit_location.php?id=<?php echo $_GET["id"]?>" method="post">
             <p>Country: <input type="text" name="Country" placeholder="Country" value="<?php echo $res['country']?>" required></p>
             <p>City: <input type="text" name="city" placeholder="city" value="<?php echo $res['city']?>" required></p>
             <p>Zip: <input type="text" name="zip" placeholder="zip" value="<?php echo $res['zip']?>" required></p>

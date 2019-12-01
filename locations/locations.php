@@ -30,8 +30,8 @@ foreach ($res as $row) {
     for ($j = 0; $j < 8; $j++) { // we're expecting eight attributes
         echo "<td> " . $row[$j] . " </td>"; // gives the current item of the current attribute
     }
-    echo " <td><a href='index.php?id=" . $row[0] . "'>Edit</a>";
-    echo " <a href='index.php?id=" . $row[0] . "'>Delete</a></td>";
+    echo " <td><a href='edit_location.php?id=" . $row[0] . "'>Edit</a>";
+    echo " <a href='delete_location.php?id=" . $row[0] . "'>Delete</a></td>";
     echo "<br>";
     echo "</tr>";
 }

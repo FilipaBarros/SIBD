@@ -15,7 +15,7 @@
         $res = get_table($id)[0];
         //print_r($res);
         ?>
-        <form action="actions/action_edit_device.php?id=<?php echo $_GET["id"]?>" method="post">
+        <form action="actions/action_edit_system.php?id=<?php echo $_GET["id"]?>" method="post">
             <p>Category: <input type="text" name="category" placeholder="category" value="<?php echo $res['category']?>" required></p>
             <p>Functions: <input type="text" name="functions" placeholder="functions" value="<?php echo $res['functions']?>" required></p>
             <p>System Description: <input type="text" name="sysdescription" placeholder="sysdescription" value="<?php echo $res['sysdescription']?>" required></p>

@@ -8,7 +8,7 @@
 
    
     global $dataB;
-    $statement = $dataB->prepare('UPDATE Systems SET category =?, functions=?, sysdescription=?, WHERE sysid=?');
+    $statement = $dataB->prepare('UPDATE Systems SET category =?, functions=?, sysdescription=? WHERE sysid=?');
     $statement->execute(array($category,$functions,$sysdescription,$id));
   
     header('Location: ../systems.php');
