@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS UserPermissions;
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Systems;
 DROP TABLE IF EXISTS DevicesCategories;
+DROP TABLE IF EXISTS DevicesComponents;
 DROP TABLE IF EXISTS Devices;
 DROP TABLE IF EXISTS Categories;
 DROP TABLE IF EXISTS Sensors;
@@ -10,6 +11,7 @@ DROP TABLE IF EXISTS Actuators;
 DROP TABLE IF EXISTS Components;
 DROP TABLE IF EXISTS Locals;
 DROP TABLE IF EXISTS PermissionTypes;
+
 
 
 
@@ -93,6 +95,14 @@ CREATE TABLE DevicesCategories(
     catid INTEGER NOT NULL,
     FOREIGN KEY (devid) REFERENCES Devices(devid),
     FOREIGN KEY (catid) REFERENCES Categories(catid)
+);
+
+CREATE TABLE DevicesComponents(
+    devcompid INTEGER NOT NULL,
+    devid INTEGER NOT NULL,
+    compid INTEGER NOT NULL,
+    FOREIGN KEY (devid) REFERENCES Devices(devid),
+    FOREIGN KEY (compid) REFERENCES Components(compid)
 );
 
 

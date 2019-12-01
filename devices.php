@@ -40,9 +40,9 @@
                 for ($j = 0; $j < 9; $j++) { // we're expecting nine attributes
                     echo "<td> ".$row[$j]." </td>"; // gives the current item of the current attribute
                 }
-                echo "  <td><a href='edit.php?section=comic&function=edit&id=".$row[0]."'>Edit</a></td>";
-                echo "  <td><a href='delete_device.php?section=comic&function=delete&id=".$row[0]."'>Delete</a></td>";
-                echo "  <td><a href='details.php?section=comic&function=delete&id=".$row[0]."'>Info</a></td>";
+                echo "  <td><a href='edit_device.php?id=".$row[0]."'>Edit</a></td>";
+                echo "  <td><a href='delete_device.php?id=".$row[0]."'>Delete</a></td>";
+                echo "  <td><a href='details.php?id=".$row[0]."'>Info</a></td>";
                 echo "<br>";
                 echo "</tr>";
             }

@@ -87,6 +87,8 @@ INSERT INTO Sensors (sensid, units, periodicity, compname, compcode, stat) VALUE
 -- actuators table 
 INSERT INTO Actuators (actid, func, compname, compcode, stat) VALUES (3, 'activates the sprinkler' , 'mechanical sprinkler', 1236, 'working');
 
+-- devices components tables 
+INSERT INTO DevicesComponents(devcompid, devid, compid) VALUES (1,4,3);
 
 
 

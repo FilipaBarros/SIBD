@@ -39,8 +39,8 @@
                 for ($j = 0; $j < 8; $j++) { // we're expecting eight attributes
                     echo "<td> ".$row[$j]." </td>"; // gives the current item of the current attribute
                 }
-                echo "  <td><a href='index.php?section=comic&function=edit&id=".$row[0]."'>Edit</a></td>";
-                echo "  <td><a href='index.php?section=comic&function=delete&id=".$row[0]."'>Delete</a></td>";
+                echo "  <td><a href='index.php?id=".$row[0]."'>Edit</a></td>";
+                echo "  <td><a href='index.php?id=".$row[0]."'>Delete</a></td>";
                 echo "<br>";
                 echo "</tr>";
             }
@@ -54,21 +54,3 @@
 
 
 
-
-<?php
-/*
-    echo "<table>";
-    $stmt = mysql_query("SELECT ID, Comic_Name, Publisher_Name from COMIC, PUBLISHER where COMIC.Publisher_ID = PUBLISHER.ID order by COMIC.Title");
-    while ($row = mysql_fetch_row($stmt)) {
-        echo "<tr>";
-     for ($j = 0; $j < 3; $j++) { // we're expecting three attributes
-          echo "<td>".$row[$j]."</td>"; // gives the current item of the current attribute
-     }
-     echo "  <td><a href="index.php?section=comic&function=edit&id=$row[0]">Edit</a></td>";
-     echo "  <td><a href="index.php?section=comic&function=delete&id=$row[0]">Delete</a></td>";
-     echo "</tr>";
-}
-echo "<table>";
-echo "<a href="index.php?section=comic&function=new">Create new comic</a>";
-*/
-?> 
