@@ -19,17 +19,18 @@ function get_table($sysid)
 <?php
 //print_r($_SESSION["systems"]);
 foreach ($_SESSION["systems"] as $sysid => $permision) {
+    echo "<br>";
     echo "<h3> SYSTEM " . $sysid . "</h3>";
     echo "<table>";
     $res = get_table($sysid);
     echo " <tr> ";
-    echo "<td>  #           </td>";
-    echo "<td>  UserName </td>";
-    echo "<td>  Contact </td>";
-    echo "<td>  SystemID     </td>";
-    echo "<td>  SystemDescription     </td>";
-    echo "<td>  Permission Level     </td>";
-    echo "<td>  Actions     </td>";
+    echo "<th>  #           </th>";
+    echo "<th>  UserName </th>";
+    echo "<th>  Contact </th>";
+    echo "<th>  SystemID     </th>";
+    echo "<th>  SystemDescription     </th>";
+    echo "<th>  Permission Level     </th>";
+    echo "<th>  Actions     </th>";
     echo " </tr> ";
     echo " <br> ";
     foreach ($res as $row) {
@@ -40,9 +41,9 @@ foreach ($_SESSION["systems"] as $sysid => $permision) {
         echo "  <td><a href='edit_device.php?id=" . $row[0] . "'>Edit</a>";
         echo "  <a href='delete_device.php?id=" . $row[0] . "'>Delete</a>";
         echo "  <a href='details_device.php?id=" . $row[0] . "'>Info</a></td>";
-        echo "<br>";
         echo "</tr>";
     }
+    echo "<br>";
     echo "</table>";
 }
 include('../partials/footer.php');

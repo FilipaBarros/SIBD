@@ -5,13 +5,7 @@
     padding: 0;
 } 
 
-table {
-    border-collapse: collapse;
-}
 
-table, th, td {
-    border: 1px solid gray;
-}
 
 h1, h2, h3{
     color: #82716e;
@@ -39,6 +33,7 @@ h3 {
     margin-top: 0px;
     padding-top: 0px;
     margin-left: 200px; /* Account for sidebar */
+    margin-right: 80px; /*looks nicer this way*/
     padding: 0px 10px;
 }
 
@@ -99,7 +94,46 @@ h3 {
 
 
 
-  /*color palete: Barely Green: #acb7ae
+/*listing */
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 5px;
+}
+
+th {
+    background-color: #acb7ae;
+    color: #82716e;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+  }
+
+
+tr{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even){
+    background-color: #e4decd;
+}
+
+table a{
+    padding: 10px;
+    font-size: 15px;
+    color: #82716e;
+    display: block;
+}
+
+
+
+
+
+/*color palete: Barely Green: #acb7ae
 
 The Brown-shirts: #82716e
 

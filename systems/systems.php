@@ -14,11 +14,11 @@ function get_table()
 <?php
 $res = get_table();
 echo " <tr> ";
-echo "<td> # </td>";
-echo "<td> category </td>";
-echo "<td> functions </td>";
-echo "<td> sysdescription </td>";
-echo "<td> Actions </td>";
+echo "<th> # </th>";
+echo "<th> category </th>";
+echo "<th> functions </th>";
+echo "<th> sysdescription </th>";
+echo "<th> Actions </th>";
 echo " </tr> ";
 echo " <br> ";
 foreach ($res as $row) {
