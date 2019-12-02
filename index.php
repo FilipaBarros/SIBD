@@ -1,14 +1,35 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Device Lookup Service</title>
-    </head>
-    <body>    
+<?php include ('./partials/header.php') ?>  
+<?php if (isset($_SESSION['username'])) {
+    header("Location: welcome_page.php");
+}
+?>
+<h1 class="maintitle">Device Lookup Service</h1>
+<div class="wrapperindex">
+    <div class="box login">
+    <section id="login">
         <?php
-            $title = "Device Lookup Service";
-            echo "<p>".$title."</p>";       
+            $title = "Login";
+            echo "<h2>".$title."</h2>";
         ?>
-        <a href="users/login_page.php">Login</a>
-    </body>
-</html>
+        <form action="./users/actions/action_login.php" method="post">
+            <p>Username: <input type="text" name="username" placeholder="Username" required></p>
+            <p>Password: <input type="password" name="password" placeholder="Password" required></p>
+            <input type="submit" value="Login">
+        </form>
+    </section>
+    </div>
+    <div class="box register">
+    <section id="register">
+        <?php
+            $title = "Register";
+            echo "<h2>".$title."</h2>";
+        ?>
+        <form action="./users/actions/action_register.php" method="post">
+            <p>Username: <input type="text" name="username" placeholder="Username" required></p>
+            <p>Password: <input type="password" name="password" placeholder="Password" required></p>
+            <p>Email: <input type="email" name="emailaddress" placeholder="Email" required></p>
+            <input type="submit" value="Register">
+        </form>    
+    </section> 
+    </div>
+<?php include ('./partials/footer.php') ?>   

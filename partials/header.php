@@ -10,7 +10,9 @@
     </head>
     <body>
 
-<?php if (isset($_SESSION['username'])) { ?>   
+<?php
+    $url = $_SERVER['REQUEST_URI'];        
+    if (isset($_SESSION['username'])) { ?>   
         <ul class="navbar">
             <li class = "username"><span><?= $_SESSION['username'] ?></span></li>
             <li><a  href = "<?php echo '/SIBD' ?>/welcome_page.php">Dashboard</a></li>
