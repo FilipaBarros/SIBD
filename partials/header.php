@@ -8,7 +8,7 @@
         <title>Create Device</title>
         <link rel="stylesheet" type="text/css" href="/SIBD/resources/style.css">
     </head>
-    <body>  
+    <body>
 
 <?php if (isset($_SESSION['username'])) { ?>
     <header>
@@ -16,11 +16,15 @@
             <span><?= $_SESSION['username'] ?></span>
             <input type="submit" value="Logout">
         </form>
+        <ul class="navbar">
+            <li><a href="<?php echo '/SIBD' ?>/welcome_page.php">Welcome Page</a></li>
+            <li><a href="<?php echo '/SIBD' ?>/users/users.php">Users</a></li>
+            <li><a href="<?php echo '/SIBD' ?>/locations/locations.php">Locations</a></li>
+            <li><a href="<?php echo '/SIBD' ?>/devices/devices.php">Devices</a></li>
+            <li><a href="<?php echo '/SIBD' ?>/systems/systems.php">Systems</a></li>
+        </ul>
+       
 
-        <a href="<?php echo '/SIBD' ?>/welcome_page.php">Welcome Page</a>
-        <a href="<?php echo '/SIBD' ?>/users/users.php">Users</a>
-        <a href="<?php echo '/SIBD' ?>/locations/locations.php">Locations</a>
-        <a href="<?php echo '/SIBD' ?>/devices/devices.php">Devices</a>
-        <a href="<?php echo '/SIBD' ?>/systems/systems.php">Systems</a>
+        
     </header> 
 <?php } ?>

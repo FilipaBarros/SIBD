@@ -5,3 +5,48 @@ table {
 table, th, td {
     border: 1px solid gray;
 }
+
+body {
+    margin: 0; 
+    padding: 0; 
+    font-size: 100%; 
+    line-height: 1.5
+    color: #eceff9;
+}
+h1, h2, h3, h4 {
+    margin: 1em 0 .5em; 
+    line-height: 1.25
+}
+h1 {
+    font-size: 2em
+}
+h2 { 
+    font-size: 1.5em
+}
+h3 { 
+    font-size: 1.2em
+}
+a:link, a:hover, a:visited, a:active    {
+    color: #82716e;
+}
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #acb7ae;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    color: #82716e;
+    font-size: 1.2em;
+  }
+
+
+  /*color palete: Barely Green: #acb7ae
+
+The Brown-shirts: #82716e
+
+Tan Blonde: #e4decd
+
+Blondey: #c2b490 
