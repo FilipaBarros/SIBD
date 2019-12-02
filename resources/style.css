@@ -1,3 +1,5 @@
+
+/* Style page content */
 * {
     margin: 0;
     padding: 0;
@@ -33,7 +35,6 @@ h3 {
     font-size: 1.2em
 }
 
-/* Style page content */
 .main {
     margin-top: 0px;
     padding-top: 0px;
@@ -41,6 +42,10 @@ h3 {
     padding: 0px 10px;
 }
 
+
+
+
+/* Navbar*/
 
 .navbar {
     margin-top: 0px;
@@ -68,6 +73,30 @@ h3 {
 .navbar a:hover{
     color: #e4decd;
 }
+
+
+/*grid divisions*/
+
+.wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, [col] auto ) ;
+    grid-template-rows: repeat(2, [row] auto  );
+}  
+
+.box {
+    background-color: #acb7ae;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    font-size: 125%;
+
+}
+.graph {
+    grid-column: span 2;
+}
+
+
 
 
   /*color palete: Barely Green: #acb7ae
