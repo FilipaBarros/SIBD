@@ -17,10 +17,10 @@
             <p>Local ID: <select name ="local" required>
                 <?php
                 global $dataB;
-                $queryLocal = "SELECT locid FROM Locals";
+                $queryLocal = "SELECT locid, zip FROM Locals";
                 $result = $dataB->query($queryLocal);
                 while ($row = $result->fetch()) {
-                    echo "<option value=\"local\">" . $row['locid'] . "</option>";
+                    echo "<option value='" . $row['locid'] . "'>". $row['zip'] . "</option>";
                 }
 
                 ?>
@@ -28,10 +28,10 @@
             <p>System ID: <select name ="system" value="<?php echo $res['sysid']?>"required>
                 <?php
                 global $dataB;
-                $queryLocal = "SELECT sysid FROM Systems";
+                $queryLocal = "SELECT sysid, sysdescription FROM Systems";
                 $result = $dataB->query($queryLocal);
                 while ($row = $result->fetch()) {
-                    echo "<option value=\"system\">" . $row['sysid'] . "</option>";
+                    echo "<option value='" . $row['sysid'] ."'>" . $row['sysdescription'] . "</option>";
                 }
 
                 ?>
