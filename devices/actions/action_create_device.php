@@ -9,19 +9,15 @@
     $ip=$_POST['ip'];
     $status=$_POST['status'];
     $local=$_POST['local'];
+    $sysId=$_POST['system'];
 
-    function newDevice($deviceName,$manufacturer,$description,$swversion,$swartefact,$ip,$statu,$local){
-        global $dataB;
-        $statement = $dataB->prepare('INSERT INTO Devices(devname,manufacturer,devdescription,swversion,swartefact,ip,stat,locid) VALUES (?,?,?,?,?,?,?,?)');
-        $statement->execute(array($deviceName,$manufacturer,$description,$swversion,$swartefact,$ip,$statu,$local));
-        print_r($statement);
-    }
+    global $dataB;
+    $statement = $dataB->prepare('INSERT INTO Devices(devname,manufacturer,devdescription,swversion,swartefact,ip,stat,locid,sysid) VALUES (?,?,?,?,?,?,?,?,?)');
+    $statement->execute(array($deviceName,$manufacturer,$description,$swversion,$swartefact,$ip,$status,$local,$sysId));
+    print_r($statement);
 
-    newDevice($deviceName,$manufacturer,$description,$swversion,$swartefact,$ip,$statu,$local);
-    header('Location: ../../welcome_page.php');
+    header('Location: ../create_sensor.php?devId='.$dataB->lastInsertId());
     
-   // catch(PDOException $e){
-   //     header('Location: register_page.php');
-    //}
+   
 
 ?>
