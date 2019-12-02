@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+} 
+
 table {
     border-collapse: collapse;
 }
@@ -6,15 +11,16 @@ table, th, td {
     border: 1px solid gray;
 }
 
+h1, h2, h3{
+    color: #82716e;
+    padding-top: 15px;
+}
 body {
-    margin: 0; 
-    padding: 0; 
     font-size: 100%; 
     line-height: 1.5;
-    color: #eceff9;
 }
 h1, h2, h3, h4 {
-    margin: 1em 0 .5em; 
+    margin: 0; 
     line-height: 1.25
 }
 h1 {
@@ -26,21 +32,42 @@ h2 {
 h3 { 
     font-size: 1.2em
 }
-a:link, a:hover, a:visited, a:active    {
-    color: #82716e;
+
+/* Style page content */
+.main {
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-left: 200px; /* Account for sidebar */
+    padding: 0px 10px;
 }
+
+
 .navbar {
+    margin-top: 0px;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 25%;
     background-color: #acb7ae;
-    height: 100%; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
-    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    height: 100%; /* Total Height */
+    position: fixed; /* Make it stick*/
     color: #82716e;
-    font-size: 1.2em;
-  }
+    font-size: 20px;
+    width: 160px; /*only way I could find of fixing it*/
+}
+
+.navbar li{
+    padding: 15px;
+    font-size: 20px;
+    color: #82716e;
+    display: block;
+}
+
+.navbar a{
+    color: #82716e;
+    display: block;
+}
+
+.navbar a:hover{
+    color: #e4decd;
+}
 
 
   /*color palete: Barely Green: #acb7ae

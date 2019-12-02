@@ -10,21 +10,17 @@
     </head>
     <body>
 
-<?php if (isset($_SESSION['username'])) { ?>
-    <header>
-        <form class="logout" action="/SIBD/users/actions/action_logout.php">
-            <span><?= $_SESSION['username'] ?></span>
-            <input type="submit" value="Logout">
-        </form>
+<?php if (isset($_SESSION['username'])) { ?>   
         <ul class="navbar">
-            <li><a href="<?php echo '/SIBD' ?>/welcome_page.php">Welcome Page</a></li>
-            <li><a href="<?php echo '/SIBD' ?>/users/users.php">Users</a></li>
-            <li><a href="<?php echo '/SIBD' ?>/locations/locations.php">Locations</a></li>
-            <li><a href="<?php echo '/SIBD' ?>/devices/devices.php">Devices</a></li>
-            <li><a href="<?php echo '/SIBD' ?>/systems/systems.php">Systems</a></li>
+            <li class = "username"><span><?= $_SESSION['username'] ?></span></li>
+            <li><a  href = "<?php echo '/SIBD' ?>/welcome_page.php">Dashboard</a></li>
+            <li><a href = "<?php echo '/SIBD' ?>/welcome_page.php">Account</a></li>
+            <li><a href = "<?php echo '/SIBD' ?>/locations/locations.php">Locations</a></li>
+            <li><a href = "<?php echo '/SIBD' ?>/devices/devices.php">Devices</a></li>
+            <li><a href = "<?php echo '/SIBD' ?>/systems/systems.php">Systems</a></li>
+            <li><a href = "<?php echo '/SIBD' ?>/users/users.php">Users</a></li>
+            <li><a href = "<?php echo '/SIBD' ?>/users/actions/action_logout.php">Logout</a></li>
         </ul>
-       
-
-        
-    </header> 
+        <div class="main">  
+     
 <?php } ?>

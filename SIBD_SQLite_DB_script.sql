@@ -96,7 +96,7 @@ CREATE TABLE DevicesCategories(
 );
 
 CREATE TABLE DevicesComponents(
-    devcompid INTEGER NOT NULL,
+    devcompid INTEGER NOT NULL PRIMARY KEY,
     devid INTEGER NOT NULL,
     compid INTEGER NOT NULL,
     CONSTRAINT devicescomponents_devices FOREIGN KEY (devid) REFERENCES Devices(devid) ON DELETE CASCADE,
