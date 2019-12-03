@@ -35,6 +35,7 @@
         INNER JOIN PermissionTypes on UserPermissions.permtypeid = PermissionTypes.permtypeid 
         INNER JOIN Users on Users.userid = UserPermissions.userid WHERE Users.userid  = ?");
         global $userid;
+        $_SESSION['userid']=$userid;
         $statement->execute(array($userid));
         $res = $statement->fetchAll();
         $_SESSION['systems'] = array();
