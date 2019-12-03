@@ -12,6 +12,8 @@ DROP TABLE IF EXISTS Systems;
 DROP TABLE IF EXISTS Locals;
 DROP TABLE IF EXISTS PermissionTypes;
 
+PRAGMA foreign_keys=ON;
+
 -- users table
 CREATE TABLE Users
 (
