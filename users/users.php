@@ -52,8 +52,7 @@ foreach ($_SESSION["systems"] as $sysid => $permision) {
             echo "  <td><a href='details_device.php?id=" . $row[0] . "'>Info</a></td>";
         }
         if($userPerm==1){
-            echo "  <td><a href='edit_device.php?id=" . $row[0] . "'>Edit</a>";
-            echo "  <a href='details_device.php?id=" . $row[0] . "'>Info</a></td>";
+            echo "  <td><a href='details_device.php?id=" . $row[0] . "'>Info</a></td>";
         }
         
         echo "<br>";
