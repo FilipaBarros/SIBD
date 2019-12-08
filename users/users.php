@@ -45,13 +45,8 @@ foreach ($_SESSION["systems"] as $sysid => $permision) {
         }
         if($userPerm==3){
         echo "  <td><a href='edit_permissions.php?id=" . $row[0] . "&sys=".$sysid."'>Edit</a>";
-<<<<<<< HEAD
         echo "  <a href='actions/action_delete_user.php?id=" . $row[0] . "'>Delete</a>";
         echo "  <a href='details_user.php?id=" . $row[0] . "'>Info</a></td>";
-=======
-        echo "  <a href='delete_user.php?id=" . $row[0] . "'>Delete</a>";
-        echo "  <a href='details_device.php?id=" . $row[0] . "'>Info</a></td>";
->>>>>>> 8d47798c5a8d5b0b8b6ec82e740574d74df7e5bc
         }
         if($userPerm==2){
             echo "  <td><a href='details_user.php?id=" . $row[0] . "'>Info</a></td>";
