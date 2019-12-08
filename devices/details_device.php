@@ -42,7 +42,22 @@
 
     }
     function get_table_systems($device_id){
+        global $dataB;
+        $statement = $dataB->prepare("SELECT Systems.sysid, Systems.sysdescription, Systems.category, Systems.functions 
+                                      from Systems JOIN Devices on Devices.sysid = Systems.sysid 
+                                      WHERE Devices.devid = ?;");
+        $statement->execute(array($compid));
+        $systems = $statement->fetchAll();
+        return $systems;
     }
+    //yep, again for info and stuff
+    function get_table_device(){ 
+
+    }
+    function get_table_location(){
+        
+    }
+
 
 ?>
 <h2>Device Info</h2>
@@ -90,7 +105,7 @@
     echo "<tr>";
     echo "<th> #                   </th>";
     echo "<th> Units               </th>";
-    echo "<th> Periodivity         </th>";
+    echo "<th> Periodicity         </th>";
     echo "<th> Component Name      </th>";
     echo "<th> Component Code      </th>";
     echo "<th> Status              </th>";
@@ -112,24 +127,22 @@
     echo "</table>";
     
     //actuators
-    print_r($allactuators);
+    //print_r($allactuators);
     echo "<h4>Actuators</h4>";
     echo "<table>";
     echo "<tr>";
     echo "<th> #                   </th>";
-    echo "<th> Units               </th>";
-    echo "<th> Periodivity         </th>";
+    echo "<th> Function            </th>";
     echo "<th> Component Name      </th>";
     echo "<th> Component Code      </th>";
     echo "<th> Status              </th>";
     echo " </tr> ";
     echo " <br> ";
-    foreach($allsensors as $res){
+    foreach($allactuators as $res){
         for ($j = 0; $j < count($res); $j++) { 
             echo "<tr>";
-            echo "<td> " . $res[$j]['sensid'] . " </td>";
-            echo "<td> " . $res[$j]['units'] . " </td>";
-            echo "<td> " . $res[$j]['periodicity'] . " </td>";
+            echo "<td> " . $res[$j]['actid'] . " </td>";
+            echo "<td> " . $res[$j]['func'] . " </td>";
             echo "<td> " . $res[$j]['compname'] . " </td>";
             echo "<td> " . $res[$j]['compcode'] . " </td>";
             echo "<td> " . $res[$j]['stat'] . " </td>";
