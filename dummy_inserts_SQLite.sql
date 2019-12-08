@@ -89,3 +89,4 @@ INSERT INTO Actuators (actid, func, compname, compcode, stat) VALUES (3, 'activa
 
 -- devices components tables 
 INSERT INTO DevicesComponents(devcompid, devid, compid) VALUES (1,4,3);
+INSERT INTO DevicesComponents(devcompid, devid, compid) VALUES (2,1,1);
