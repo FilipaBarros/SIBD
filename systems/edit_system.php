@@ -1,9 +1,17 @@
 <?php include('../partials/header.php') ?> 
-<?php if (isset($_SESSION['username'])) { ?> 
+<?php if (isset($_SESSION['username'])) { ?>    
 <h1>Edit Device</h1>
 <section id="editSystem">
         <?php
         $id = htmlspecialchars($_GET["id"]);
+        global $dataB;
+        $statement= $dataB->prepare("SELECT permtypeid FROM UserPermissions WHERE sysid=? AND userid=?");
+        $statement->execute(array($id,$_SESSION['userid']));
+        $userPerm= $statement->fetchColumn();
+
+        if($userPerm!=3){
+            header('Location: ../partials/500.php');
+        }
         function get_table($id)
         {
             global $dataB;
