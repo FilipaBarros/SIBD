@@ -9,7 +9,18 @@
         global $dataB;
         $statement = $dataB->prepare('INSERT INTO Users (username,passphrase,contact) VALUES (?,?,?)');
         $statement->execute(array($user,sha1($pass),$mail));
-        print_r($statement);
+        
+        $newUserID=$dataB->lastInsertID();
+        
+        $statement = $dataB->query("SELECT COUNT(*) FROM Systems");
+        $numSystems = $statement->fetchColumn();
+
+        for($i=1;$i<=$numSystems;$i++){
+            $statement = $dataB->prepare("INSERT INTO UserPermissions(userid,sysid,permtypeid) VALUES (?,?,?)");
+            $statement->execute(array($newUserID,$i,2));
+            print_r($statement);
+        }
+
     }
 
     newUser($username, $password, $email);
