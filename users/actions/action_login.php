@@ -46,7 +46,8 @@
         //exit();
     }
     else{
-        header('Location: ../login_page.php');
+        $error = "password";
+        header('Location: ../../index.php?error='.$error);
         exit();
     }
     
