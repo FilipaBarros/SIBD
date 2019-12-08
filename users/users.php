@@ -24,17 +24,20 @@ foreach ($_SESSION["systems"] as $sysid => $permision) {
     echo "<table>";
     $res = get_table($sysid);
     echo " <tr> ";
-    echo "<td>  #           </td>";
-    echo "<td>  UserName </td>";
-    echo "<td>  Contact </td>";
-    echo "<td>  SystemID     </td>";
-    echo "<td>  SystemDescription     </td>";
-    echo "<td>  Permission Level     </td>";
+    echo "<th>  #           </th>";
+    echo "<th>  UserName </th>";
+    echo "<th>  Contact </th>";
+    echo "<th>  SystemID     </th>";
+    echo "<th>  SystemDescription     </th>";
+    echo "<th>  Permission Level     </th>";
     $statement= $dataB->prepare("SELECT permtypeid FROM UserPermissions WHERE sysid=? AND userid=?");
     $statement->execute(array($sysid,$_SESSION['userid']));
     $userPerm= $statement->fetchColumn();
     
-    echo "<td>  Actions</td>";
+    if($userPerm==3){
+        echo "<th>  Actions</th>";
+    }
+   
     
     echo " </tr> ";
     echo " <br> ";
@@ -45,14 +48,8 @@ foreach ($_SESSION["systems"] as $sysid => $permision) {
         }
         if($userPerm==3){
         echo "  <td><a href='edit_permissions.php?id=" . $row[0] . "&sys=".$sysid."'>Edit</a>";
-        echo "  <a href='actions/action_delete_user.php?id=" . $row[0] . "'>Delete</a>";
-        echo "  <a href='details_user.php?id=" . $row[0] . "'>Info</a></td>";
-        }
-        if($userPerm==2){
-            echo "  <td><a href='details_user.php?id=" . $row[0] . "'>Info</a></td>";
-        }
-        if($userPerm==1){
-            echo "  <td><a href='details_user.php?id=" . $row[0] . "'>Info</a></td>";
+        echo "  <a href='delete_user.php?id=" . $row[0] . "&sys=".$sysid. "'>Delete</a>";
+        echo "  <a href='details_device.php?id=" . $row[0] . "'>Info</a></td>";
         }
         
         echo "<br>";
