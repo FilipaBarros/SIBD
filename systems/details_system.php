@@ -17,6 +17,9 @@
         return $devices;
     }
 
+    function get_devices_categories($device_id){
+    }
+
 ?>
 
 
@@ -71,6 +74,9 @@
     }
     echo "</tr>";
     echo "</table>";
+
+
+    //categories associated to the different devices -> TODO
 ?>
 
 

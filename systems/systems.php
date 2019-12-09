@@ -19,8 +19,6 @@ echo "<th> # </th>";
 echo "<th> category </th>";
 echo "<th> functions </th>";
 echo "<th> sysdescription </th>";
-
-
 echo "<th> Actions </th>";
 echo " </tr> ";
 echo " <br> ";
@@ -35,7 +33,7 @@ foreach ($res as $row) {
     if($userPerm==3){
         echo " <td><a href='edit_system.php?id=" . $row[0] . "'>Edit</a>";
         echo " <a href='delete_system.php?id=" . $row[0] . "'>Delete</a>";
-        echo "<a href='details_system.php?id=" . $row[0] . "'>Info</a></td>>";
+        echo "<a href='details_system.php?id=" . $row[0] . "'>Info</a></td>";
     }
     echo "<br>";
     echo "</tr>";
