@@ -34,7 +34,8 @@ foreach ($res as $row) {
     $userPerm= $statement->fetchColumn();
     if($userPerm==3){
         echo " <td><a href='edit_system.php?id=" . $row[0] . "'>Edit</a>";
-        echo " <a href='delete_system.php?id=" . $row[0] . "'>Delete</a></td>";
+        echo " <a href='delete_system.php?id=" . $row[0] . "'>Delete</a>";
+        echo "<a href='details_system.php?id=" . $row[0] . "'>Info</a></td>>";
     }
     echo "<br>";
     echo "</tr>";
