@@ -34,7 +34,10 @@ foreach ($_SESSION["systems"] as $sysid => $permision) {
     $statement->execute(array($sysid,$_SESSION['userid']));
     $userPerm= $statement->fetchColumn();
     
-    echo "<th>  Actions</th>";
+    if($userPerm==3){
+        echo "<th>  Actions</th>";
+    }
+   
     
     echo " </tr> ";
     echo " <br> ";
@@ -45,7 +48,8 @@ foreach ($_SESSION["systems"] as $sysid => $permision) {
         }
         if($userPerm==3){
         echo "  <td><a href='edit_permissions.php?id=" . $row[0] . "&sys=".$sysid."'>Edit</a>";
-        echo "  <a href='actions/action_delete_user.php?id=" . $row[0] . "'>Delete</a></td>";
+        echo "  <a href='delete_user.php?id=" . $row[0] . "&sys=".$sysid. "'>Delete</a>";
+        echo "  <a href='details_device.php?id=" . $row[0] . "'>Info</a></td>";
         }
         
         echo "<br>";

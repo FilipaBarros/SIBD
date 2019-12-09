@@ -1,9 +1,16 @@
 <?php include('../partials/header.php'); ?> 
 
-<h1>Delete Location</h1>
+<h1>Delete System</h1>
 
 <?php
 $id = $_GET["id"];
+$statement= $dataB->prepare("SELECT permtypeid FROM UserPermissions WHERE sysid=? AND userid=?");
+$statement->execute(array($id,$_SESSION['userid']));
+$userPerm= $statement->fetchColumn();
+
+if($userPerm!=3){
+    header('Location: ../partials/500.php');
+}
 $statement = $dataB->prepare("SELECT * FROM Systems WHERE sysid = ?");
 $statement->execute(array($id));
 $dev_details = $statement->fetchAll()[0];

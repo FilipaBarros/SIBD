@@ -6,6 +6,17 @@
         $sysId=$_GET['sys'];
     ?>
     <section id="changePermissions">
+        <?php 
+            global $dataB;
+            $statement= $dataB->prepare("SELECT permtypeid FROM UserPermissions WHERE sysid=? AND userid=?");
+            $statement->execute(array($sysId,$_SESSION['userid']));
+            $userPerm= $statement->fetchColumn();
+
+            if($userPerm!=3){
+                header('Location: ../partials/500.php');
+            }
+
+        ?>
         <form action="actions/action_change_permissions.php" method="post">
         <p>Change to: <select name="permission" required>
             <?php

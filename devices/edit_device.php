@@ -4,6 +4,16 @@
 <section id="editDevice">
         <?php
         $id = htmlspecialchars($_GET["id"]);
+        $sysid=$_GET["sysid"];
+        global $dataB;
+        $statement= $dataB->prepare("SELECT permtypeid FROM UserPermissions WHERE sysid=? AND userid=?");
+        $statement->execute(array($sysid,$_SESSION['userid']));
+        $userPerm= $statement->fetchColumn();
+
+        if($userPerm!=3 && $userPerm!=1){
+           header('Location: ../partials/500.php');
+        }
+
         function get_table($id)
         {
             global $dataB;
@@ -22,7 +32,10 @@
             <p>SW Version:<input type="text" name="swversion" placeholder="Software Version" value="<?php echo $res['swversion']?>" required></p>
             <p>SW Artefact: <input type="text" name="swartefact" placeholder="Software Artefact" value="<?php echo $res['swartefact']?>" required></p>
             <p>IP Address: <input type="text" name="ip" placeholder="IP Address" value="<?php echo $res['ip']?>" required pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$"></p>
-            <p>Status: <input type="text" name="status" placeholder="Status" value="<?php echo $res['stat']?>" required></p>
+            <p>Status: <select name="status" required>
+                <option value="working">Working</option>
+                <option value="offline">Offline</option>
+            </select></p>
             <p>Local ID: <select name ="local" value="<?php echo $res['locid']?>"required>
                 <?php
                 global $dataB;
