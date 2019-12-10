@@ -17,15 +17,15 @@
 <?php
 $res = get_table();
 echo " <tr> ";
-echo "<td> # </td>";
-echo "<td> Country </td>";
-echo "<td> City </td>";
-echo "<td> Zip </td>";
-echo "<td> Street </td>";
-echo "<td> Building </td>";
-echo "<td> Floor </td>";
-echo "<td> Room </td>";
-echo "<td> Actions </td>";
+echo "<th> # </th>";
+echo "<th> Country </th>";
+echo "<th> City </th>";
+echo "<th> Zip </th>";
+echo "<th> Street </th>";
+echo "<th> Building </th>";
+echo "<th> Floor </th>";
+echo "<th> Room </th>";
+echo "<th> Actions </th>";
 echo " </tr> ";
 echo " <br> ";
 foreach ($res as $row) {
