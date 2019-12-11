@@ -22,6 +22,8 @@
             <input type="hidden" name="id" value="<?=$id?>">
             <input type="submit" value="Update">
         </form>
+
+        <h3><a href="delete_account.php">Delete Account</a></h3>
     </section> 
     <section id="userInfo">
         <h2>Permissions Info</h2>
