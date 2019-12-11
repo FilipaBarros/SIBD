@@ -11,8 +11,8 @@
         <h1><?php
             $queryLocal = "SELECT COUNT(*) FROM Users";
             $result = $dataB->query($queryLocal);
-            $device_count = $result->fetchAll()[0];
-            echo $device_count[0];
+            $users = $result->fetchAll()[0];
+            echo $users[0];
         ?></h1>
     </div>
 
@@ -21,8 +21,8 @@
         <h1><?php
             $queryLocal = "SELECT COUNT(*) FROM Locals";
             $result = $dataB->query($queryLocal);
-            $local_count = $result->fetchAll()[0];
-            echo $local_count[0];
+            $locals = $result->fetchAll()[0];
+            echo $locals[0];
         ?></h1>
     </div>
 
@@ -31,8 +31,8 @@
         <h1><?php
             $queryLocal = "SELECT COUNT(*) FROM Systems";
             $result = $dataB->query($queryLocal);
-            $device_count = $result->fetchAll()[0];
-            echo $device_count[0];
+            $systems = $result->fetchAll()[0];
+            echo $systems[0];
         ?></h1>
     </div>
 
@@ -42,8 +42,8 @@
             global $dataB;
             $queryLocal = "SELECT COUNT(*) FROM Devices";
             $result = $dataB->query($queryLocal);
-            $device_count = $result->fetchAll()[0];
-            echo $device_count[0];
+            $devices = $result->fetchAll()[0];
+            echo $devices[0];
         ?></h1>
     </div>
 
@@ -58,8 +58,20 @@
             join Devices on DevicesCategories.devid = Devices.devid 
             GROUP BY catname";
             $result = $dataB->query($queryLocal);
-            $device_count = $result->fetchAll();
-            print_r($device_count);
+            $devices_category = $result->fetchAll();
+            //print_r($devices_category);
+            echo "<table>";
+            echo "<tr>";
+            echo "<th>Category Name</th>";
+            echo "<th>Number of Devices</th>";
+            echo "</tr>";
+            foreach ($devices_category as $row) {
+                echo "<tr>";
+                for ($j = 0; $j < 2; $j++) { // we're expecting 2 attributes
+                    echo "<td> " . $row[$j] . " </td>";
+                }
+            }
+            echo "</table>";
         ?>
     </div>
 
@@ -72,9 +84,22 @@
             join Devices on DevicesComponents.devid = Devices.devid 
             GROUP BY Components.stat";
             $result = $dataB->query($queryLocal);
-            $device_count = $result->fetchAll();
-            print_r($device_count);
+            $components_status = $result->fetchAll();
+            //print_r($components_status);
+            echo "<table>";
+            echo "<tr>";
+            echo "<th>Status</th>";
+            echo "<th>Number of Devices</th>";
+            echo "</tr>";
+            foreach ($components_status as $row) {
+                echo "<tr>";
+                for ($j = 0; $j < 2; $j++) { // we're expecting 2 attributes
+                    echo "<td> " . $row[$j] . " </td>";
+                }
+            }
+            echo "</table>";
         ?>
+
     </div>
     
 </div>
