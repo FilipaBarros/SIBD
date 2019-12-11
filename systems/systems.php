@@ -1,4 +1,3 @@
-
 <?php include('../partials/header.php'); ?> 
 <?php 
 function get_table()
@@ -31,9 +30,17 @@ foreach ($res as $row) {
     $statement->execute(array($row[0],$_SESSION['userid']));
     $userPerm= $statement->fetchColumn();
     if($userPerm==3){
-        echo " <td><a href='edit_system.php?id=" . $row[0] . "'>Edit</a>";
-        echo " <a href='delete_system.php?id=" . $row[0] . "'>Delete</a>";
+        echo "<td><a href='../devices/create_device.php?id=". $row[0] . "'>Add Device</a>";
+        echo "<a href='edit_system.php?id=" . $row[0] . "'>Edit</a>";
+        echo "<a href='delete_system.php?id=" . $row[0] . "'>Delete</a>";
         echo "<a href='details_system.php?id=" . $row[0] . "'>Info</a></td>";
+    }
+    if($userPerm==1){
+        echo "<td><a href='../devices/create_device.php?id=". $row[0] . "'>Add Device</a>";
+        echo "<a href='details_system.php?id=" . $row[0] . "'>Info</a></td>";
+    }
+    if($userPerm==2){
+        echo "<td><a href='details_system.php?id=" . $row[0] . "'>Info</a></td>";
     }
     echo "<br>";
     echo "</tr>";
