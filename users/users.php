@@ -47,8 +47,8 @@ foreach ($_SESSION["systems"] as $sysid => $permision) {
             echo "<td> " . $row[$j] . " </td>"; // gives the current item of the current attribute
         }
         if($userPerm==3){
-        echo "  <td><a href='edit_permissions.php?id=" . $row[0] . "&sys=".$sysid."'>Edit</a>";
-        echo "  <a href='delete_user.php?id=" . $row[0] . "&sys=".$sysid. "'>Delete</a></td>";
+        echo "  <td><a class='btn' href='edit_permissions.php?id=" . $row[0] . "&sys=".$sysid."'>Edit</a>";
+        echo "  <a class='btn' href='delete_user.php?id=" . $row[0] . "&sys=".$sysid. "'>Delete</a></td>";
         }
         
         echo "<br>";

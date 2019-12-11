@@ -11,8 +11,6 @@ function get_table()
 ?>
 <h2>Devices</h2>
 <br>
-<a href='create_device.php'>Create Device</a>
-<br>
 <br>
 <table>
 <?php
@@ -39,16 +37,16 @@ foreach ($res as $row) {
     $statement->execute(array($row[9],$_SESSION['userid']));
     $userPerm=$statement->fetchColumn();
     if($userPerm==3){
-        echo "  <td><a href='edit_device.php?id=" . $row[0] . "&sysid=".$row[9]. "'>Edit</a>";
-        echo "  <a href='delete_device.php?id=" . $row[0] . "&sysid=".$row[9].  "'>Delete</a>";
-        echo "  <a href='details_device.php?id=" . $row[0] . "'>Info</a></td>";
+        echo "  <td><a class='btn' href='edit_device.php?id=" . $row[0] . "&sysid=".$row[9]. "'>Edit</a>";
+        echo "  <a class='btn' href='delete_device.php?id=" . $row[0] . "&sysid=".$row[9].  "'>Delete</a>";
+        echo "  <a class='btn' href='details_device.php?id=" . $row[0] . "'>Info</a></td>";
     }
     if($userPerm==2){
-        echo "  <td><a href='details_device.php?id=" . $row[0] . "'>Info</a></td>";
+        echo "  <td><a class='btn' href='details_device.php?id=" . $row[0] . "'>Info</a></td>";
     }
     if($userPerm==1){
-        echo "  <td><a href='edit_device.php?id=" . $row[0] . "&sysid=".$row[9]. "'>Edit</a>";
-        echo "  <a href='details_device.php?id=" . $row[0] . "'>Info</a>";
+        echo "  <td><a class='btn' href='edit_device.php?id=" . $row[0] . "&sysid=".$row[9]. "'>Edit</a>";
+        echo "  <a class='btn' href='details_device.php?id=" . $row[0] . "'>Info</a>";
 
     }
     echo "</tr>";

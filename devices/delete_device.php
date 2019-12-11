@@ -23,8 +23,8 @@
 You are going to delete the device with ID: <?php echo $dev_details["devid"] ?> - Name: <?php echo $dev_details["devname"] ?>
 </h2>
 
-<a href="actions/action_delete_device.php?id=<?php echo $dev_details["devid"] ?>">Delete</a>
-<a href="devices.php">Go Back</a>
+<a class='btn' href="actions/action_delete_device.php?id=<?php echo $dev_details["devid"] ?>">Delete</a>
+<a class='btn' href="devices.php">Go Back</a>
 
 
 <?php include('../partials/footer.php'); ?> 

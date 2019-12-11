@@ -35,6 +35,18 @@ h3 {
     font-size: 1.2em
 }
 
+.btn {
+    border: 2px solid #acb7ae;
+    padding: 2px;
+    margin: 3px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover{
+    background: #acb7ae;
+}
+
 .main {
     margin-top: 0px;
     padding-top: 0px;
@@ -58,9 +70,47 @@ h3 {
     width: 180px; /*only way I could find of fixing it*/
 }
 
+.navbar a {
+    text-decoration: none;
+}
+
 .a-dashboard:before {
-    font-size: 50px;
+    font-size: 45px;
     content: "\f080";
+	font-family: fontawesome;
+}
+
+.a-account:before {
+    font-size: 45px;
+    content: "\f007";
+	font-family: fontawesome;
+}
+
+.a-locations:before {
+    font-size: 45px;
+    content: "\f14e";
+	font-family: fontawesome;
+}
+
+.a-devices:before {
+    font-size: 45px;
+    content: "\f0a0";
+	font-family: fontawesome;
+}
+.a-systems:before {
+    font-size: 45px;
+    content: "\f247";
+	font-family: fontawesome;
+}
+.a-users:before{
+    font-size: 45px;
+    content: "\f2b9";
+	font-family: fontawesome;
+}
+
+.a-logout:before{
+    font-size: 45px;
+    content: "\f057";
 	font-family: fontawesome;
 }
 
@@ -104,6 +154,11 @@ h3 {
     font-size: 125%;
 
 }
+
+.box h1 {
+    color: #e4decd;
+}
+
 .graph {
     grid-column: span 2;
 }

@@ -21,8 +21,8 @@ $dev_details = $statement->fetchAll()[0];
 You are going to delete the system with ID: <?php echo $dev_details["sysid"] ?> - System Description: <?php echo $dev_details["sysdescription"] ?> 
 </h2>
 
-<a href="actions/action_delete_system.php?id=<?php echo $dev_details["sysid"] ?>">Delete</a>
-<a href="systems.php">Go Back</a>
+<a class='btn' href="actions/action_delete_system.php?id=<?php echo $dev_details["sysid"] ?>">Delete</a>
+<a class='btn' href="systems.php">Go Back</a>
 
 
 <?php include('../partials/footer.php'); ?> 

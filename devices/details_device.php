@@ -161,7 +161,7 @@
             echo "</tr>";
         }
     }
-    echo "<tr><a href='create_sensor.php?id=".$device_id."'>Add Sensor</a></tr>";
+    echo "<tr><a class='btn' href='create_sensor.php?id=".$device_id."'>Add Sensor</a></tr>";
     echo "</tr>";
     echo "</table>";
     
@@ -188,7 +188,7 @@
             echo "</tr>";
         }
     }
-    echo "<tr><a href='create_actuator.php?id=".$device_id."'>Add Actuator</a></tr>";
+    echo "<tr><a class='btn' href='create_actuator.php?id=".$device_id."'>Add Actuator</a></tr>";
     echo "</tr>";
     echo "</table>";
 

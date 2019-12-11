@@ -14,7 +14,7 @@
     ?>
 
 </section>
-<a href="devices.php"><button type="button">Finish</button></a>
+<a class='btn' href="devices.php"><button type="button">Finish</button></a>
 
 <?php 
 } 

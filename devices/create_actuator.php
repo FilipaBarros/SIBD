@@ -15,7 +15,7 @@
         <input type="hidden" name="devId" value="<?=$devId?>">
         <input type="submit" value="Create">
     </form>
-    <a href="associate_category.php?devId=<?=$devId?>"><button type="button">Continue</button></a>
+    <a class='btn' href="associate_category.php?devId=<?=$devId?>"><button type="button">Continue</button></a>
 
 </section>
 

@@ -48,7 +48,7 @@ foreach ($res as $row) {
     
 
     if($check==1){
-        echo " <td><a href='edit_location.php?id=" . $row[0] . "'>Edit</a>";
+        echo " <td><a class='btn' href='edit_location.php?id=" . $row[0] . "'>Edit</a>";
     }
      echo "<br>";
     echo "</tr>";
