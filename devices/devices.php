@@ -9,8 +9,11 @@ function get_table()
     return $devices;
 }
 ?>
-<a href='create_device.php'>Create Device</a>
 <h2>Devices</h2>
+<br>
+<a href='create_device.php'>Create Device</a>
+<br>
+<br>
 <table>
 <?php
 $res = get_table();
@@ -27,7 +30,6 @@ echo "<th>  Local ID    </th>";
 echo "<th>  System ID   </th>";
 echo "<th>  Actions     </th>";
 echo " </tr> ";
-echo " <br> ";
 foreach ($res as $row) {
     echo "<tr>";
     for ($j = 0; $j < 10; $j++) { // we're expecting 10 attributes
@@ -49,8 +51,6 @@ foreach ($res as $row) {
         echo "  <a href='details_device.php?id=" . $row[0] . "'>Info</a>";
 
     }
-        
-    echo "<br>";
     echo "</tr>";
 }
 include('../partials/footer.php');

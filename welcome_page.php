@@ -1,8 +1,10 @@
 <?php include ('partials/header.php') ?>
 
-
-<div class="wrapper">
     
+<h2>Dashboard</h2>
+<br>
+<br>
+<div class="wrapper">
 
     <div class="box Users">
         <h2>Users</h2>
@@ -44,9 +46,40 @@
             echo $device_count[0];
         ?>
     </div>
-    <div class = "box graph">Graph 1</div>
-    <div class = "box graph">Graph 2</div>
+
+
+
+    <div class = "box graph">
+        <h2>Devices per Category</h2>
+        <?php
+            global $dataB;
+            $queryLocal ="SELECT catname, COUNT(*) from DevicesCategories 
+            join Categories on DevicesCategories.catid = Categories.catid 
+            join Devices on DevicesCategories.devid = Devices.devid 
+            GROUP BY catname";
+            $result = $dataB->query($queryLocal);
+            $device_count = $result->fetchAll();
+            print_r($device_count);
+        ?>
+    </div>
+
+    <div class = "box graph">
+        <h2>Components' Status</h2>
+        <?php
+            global $dataB;
+            $queryLocal ="SELECT Components.stat, COUNT(*) from DevicesComponents 
+            join Components on DevicesComponents.compid = Components.compid
+            join Devices on DevicesComponents.devid = Devices.devid 
+            GROUP BY Components.stat";
+            $result = $dataB->query($queryLocal);
+            $device_count = $result->fetchAll();
+            print_r($device_count);
+        ?>
+    </div>
     
 </div>
 
 <?php include ('partials/footer.php') ?>
+
+
+<!-- TODO: 1. tabela com categorias de todos os devices que existem      -->

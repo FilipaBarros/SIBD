@@ -5,8 +5,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Create Device</title>
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <title>Device Management System</title>
         <link rel="stylesheet" type="text/css" href="/SIBD/resources/style.css">
     </head>
     <body>
@@ -16,13 +15,13 @@
     if (isset($_SESSION['username'])) { ?>   
         <ul class="navbar">
             <li class = "username"><span><?= $_SESSION['username'] ?></span></li>
-            <li><a  href = "<?php echo '/SIBD' ?>/welcome_page.php">Dashboard</a></li>
-            <li><a href = "<?php echo '/SIBD' ?>/welcome_page.php">Account</a></li>
-            <li><a href = "<?php echo '/SIBD' ?>/locations/locations.php">Locations</a></li>
-            <li><a href = "<?php echo '/SIBD' ?>/devices/devices.php">Devices</a></li>
-            <li><a href = "<?php echo '/SIBD' ?>/systems/systems.php">Systems</a></li>
-            <li><a href = "<?php echo '/SIBD' ?>/users/users.php">Users</a></li>
-            <li><a href = "<?php echo '/SIBD' ?>/users/actions/action_logout.php">Logout</a></li>
+            <li><a class="a-dashboard" href = "<?php echo '/SIBD' ?>/welcome_page.php"><br>Dashboard</a></li>
+            <li><a class="a-account" href = "<?php echo '/SIBD' ?>/welcome_page.php"><br>Account</a></li>
+            <li><a class="a-locations" href = "<?php echo '/SIBD' ?>/locations/locations.php"><br>Locations</a></li>
+            <li><a class="a-devices" href = "<?php echo '/SIBD' ?>/devices/devices.php"><br>Devices</a></li>
+            <li><a class="a-systems" href = "<?php echo '/SIBD' ?>/systems/systems.php"><br>Systems</a></li>
+            <li><a class="a-users" href = "<?php echo '/SIBD' ?>/users/users.php"><br>Users</a></li>
+            <li><a class="a-logout" href = "<?php echo '/SIBD' ?>/users/actions/action_logout.php"><br>Logout</a></li>
         </ul>
         <div class="main">  
      

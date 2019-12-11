@@ -10,6 +10,8 @@ function get_table()
 }
 ?>
 <h2>Locations</h2>
+<br>
+<br>
 <table>
 <?php
     $res = get_table();
@@ -24,7 +26,6 @@ function get_table()
     echo "<th> Room </th>";
     echo "<th> Actions </th>";
     echo " </tr> ";
-    echo " <br> ";
     foreach ($res as $row) {
         echo "<tr class='listelement'>";
         for ($j = 0; $j < 8; $j++) { // we're expecting eight attributes
@@ -32,7 +33,6 @@ function get_table()
         }
         echo " <td><a href='edit_location.php?id=" . $row[0] . "'>Edit</a>";
         echo " <a href='delete_location.php?id=" . $row[0] . "'>Delete</a></td>";
-        echo "<br>";
         echo "</tr>";
     }
 ?>
