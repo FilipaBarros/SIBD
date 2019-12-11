@@ -10,6 +10,8 @@ function get_table()
 }
 ?>
 <h2>Systems</h2>
+<br>
+<br>
 <table>
 <?php
 $res = get_table();
@@ -20,7 +22,6 @@ echo "<th> Functions </th>";
 echo "<th> System Description </th>";
 echo "<th> Actions </th>";
 echo " </tr> ";
-echo " <br> ";
 foreach ($res as $row) {
     echo "<tr>";
     for ($j = 0; $j < 4; $j++) { // we're expecting four attributes
@@ -42,7 +43,6 @@ foreach ($res as $row) {
     if($userPerm==2){
         echo "<td><a class='btn' href='details_system.php?id=" . $row[0] . "'>Info</a></td>";
     }
-    echo "<br>";
     echo "</tr>";
 }
     //foreach($res as $row){

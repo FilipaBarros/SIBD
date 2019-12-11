@@ -20,15 +20,15 @@ function get_table($sysid)
 //print_r($_SESSION["systems"]);
 foreach ($_SESSION["systems"] as $sysid => $permision) {
     global $dataB;
-    echo "<h3> SYSTEM " . $sysid . "</h3>";
+    echo "<br><h3> SYSTEM " . $sysid . "</h3><br>";
     echo "<table>";
     $res = get_table($sysid);
     echo " <tr> ";
     echo "<th>  #           </th>";
     echo "<th>  UserName </th>";
     echo "<th>  Contact </th>";
-    echo "<th>  SystemID     </th>";
-    echo "<th>  SystemDescription     </th>";
+    echo "<th>  System ID     </th>";
+    echo "<th>  System Description     </th>";
     echo "<th>  Permission Level     </th>";
     $statement= $dataB->prepare("SELECT permtypeid FROM UserPermissions WHERE sysid=? AND userid=?");
     $statement->execute(array($sysid,$_SESSION['userid']));
@@ -37,21 +37,21 @@ foreach ($_SESSION["systems"] as $sysid => $permision) {
     if($userPerm==3){
         echo "<th>  Actions</th>";
     }
-   
-    
     echo " </tr> ";
-    echo " <br> ";
     foreach ($res as $row) {
         echo "<tr>";
-        for ($j = 0; $j < 6; $j++) { // we're expecting 10 attributes
-            echo "<td> " . $row[$j] . " </td>"; // gives the current item of the current attribute
-        }
+        //userid, username, passphrase, contact
+        echo "<td>".$row['userid'] . " </td>";
+        echo "<td>".$row['username'] . " </td>";
+        echo "<td>".$row['contact'] . " </td>";
+        echo "<td><a href='/SIBD/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
+        echo "<td>".$row['sysdescription'] . " </td>";
+        echo "<td>".$row['permtypedescription'] . " </td>";
+        // gives the current item of the current attribute
         if($userPerm==3){
         echo "  <td><a class='btn' href='edit_permissions.php?id=" . $row[0] . "&sys=".$sysid."'>Edit</a>";
         echo "  <a class='btn' href='delete_user.php?id=" . $row[0] . "&sys=".$sysid. "'>Delete</a></td>";
         }
-        
-        echo "<br>";
         echo "</tr>";
     }
 

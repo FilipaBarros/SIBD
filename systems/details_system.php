@@ -11,7 +11,8 @@
 
     function get_devices($system_id){
         global $dataB;
-        $statement = $dataB->prepare("SELECT * FROM Devices WHERE sysid=? ");
+        $statement = $dataB->prepare("SELECT * FROM Devices
+        WHERE Devices.sysid=? ");
         $statement->execute(array($system_id));
         $devices = $statement->fetchAll();
         return $devices;
@@ -44,9 +45,17 @@
     echo " </tr> ";
     foreach ($res as $row) {
         echo "<tr>";
-        for ($j = 0; $j < 10; $j++) { // we're expecting 10 attributes
-            echo "<td> " . $row[$j] . " </td>"; // gives the current item of the current attribute
-        }
+        echo "<td>".$row['devid'] . " </td>";
+        echo "<td>".$row['devname'] . " </td>";
+        echo "<td>".$row['manufacturer'] . " </td>";
+        echo "<td>".$row['devdescription'] . " </td>";
+        echo "<td>".$row['swversion'] . " </td>";
+        echo "<td>".$row['swartefact'] . " </td>";
+        echo "<td>".$row['ip'] . " </td>";
+        echo "<td>".$row['stat'] . " </td>";
+        echo "<td><a href='/SIBD/locations/locations.php'>".$row['locid'] . "</td>";
+        echo "<td>".$row['sysid'] . " </td>";
+        //devid, devname, manufacturer, devdescription, swversion, swartefact, ip, stat, locid, sysid
         echo "</tr>";
     }
     echo "</table>";
