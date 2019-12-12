@@ -40,7 +40,6 @@
         $statement->execute(array($compid));
         $actuators = $statement->fetchAll();
         return $actuators;
-
     }
     function get_table_systems($device_id){
         global $dataB;
@@ -69,8 +68,6 @@
         $local = $statement->fetchAll();
         return $local;
     }
-
-
 ?>
 <h2>Device Info</h2>
 <?php
@@ -98,8 +95,6 @@
         echo "</tr>";
     }
     echo "</table>";
-
-
     //categories
     $res = get_table_devices_categories($device_id);
     echo "<br>";
@@ -119,7 +114,6 @@
     }
     echo "</tr>";
     echo "</table>";
-
     //components then sensors and actuators
     $res2 = get_table_components($device_id);
     echo "<br>";
@@ -127,15 +121,12 @@
     //foreach($res2 as $row){
     //    print_r($row);
     //}
-
     $allsensors = array();
     $allactuators = array();
-
     foreach($allcompcodes as $compcode){
         array_push($allactuators, get_table_actuators($compcode));
         array_push($allsensors, get_table_sensors($compcode));
     }
-
     //sensors
     //print_r($allsensors);
     echo "<br>";
@@ -197,7 +188,6 @@
     }
     echo "</tr>";
     echo "</table>";
-
     //systems 
     $res3 = get_table_systems($device_id);
     //print_r($res3);
@@ -220,7 +210,6 @@
     echo "<br>";
     echo "</tr>";
     echo "</table>";
-
     //location info 
     $res5 = get_table_location();
     echo "<h3>Location Info</h3>";
@@ -243,9 +232,5 @@
         echo "</tr>";
     }
     echo "</table>";
-
-
-
-
 ?>
 <?php include('../partials/footer.php'); ?> 

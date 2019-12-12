@@ -9,11 +9,9 @@
         $statement= $dataB->prepare("SELECT permtypeid FROM UserPermissions WHERE sysid=? AND userid=?");
         $statement->execute(array($sysid,$_SESSION['userid']));
         $userPerm= $statement->fetchColumn();
-
         if($userPerm!=3 && $userPerm!=1){
            header('Location: ../partials/500.php');
         }
-
         function get_table($id)
         {
             global $dataB;
@@ -45,7 +43,6 @@
                     while ($row = $result->fetch()) {
                         echo "<option value=\"local\">" . $row['locid'] . "</option>";
                     }
-
                     ?>
                 </select></p>
                 <p>System ID: <select name ="system" value="<?php echo $res['sysid']?>"required>
@@ -56,7 +53,6 @@
                     while ($row = $result->fetch()) {
                         echo "<option value=\"system\">" . $row['sysid'] . "</option>";
                     }
-
                     ?>
                 </select></p>
                 <input class="btn btn-full" type="submit" value="Update">
