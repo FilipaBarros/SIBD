@@ -3,11 +3,11 @@
     header("Location: welcome_page.php");
 }
 ?>
-<h1 class="maintitle">Device Lookup Service</h1>
+<h2 class="maintitle">Device Lookup Service</h2>
 <div class="wrapperindex">
     <div class="box login">
     <section id="login">
-        <h2>Login</h2>
+        <h3>Login</h3>
         <br>
          <?php if(isset($_GET["error"])){
             echo "<p> > Error in username or password.</p>";
@@ -22,7 +22,7 @@
     </div>
     <div class="box register">
     <section id="register">
-        <h2>Register</h2>
+        <h3>Register</h3>
         <br>
         <form action="./users/actions/action_register.php" method="post">
             <p>Username: <input type="text" name="username" placeholder="Username" required></p>

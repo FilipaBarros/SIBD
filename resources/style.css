@@ -155,11 +155,17 @@ h3 {
 
 /*grid divisions*/
 
+.wrapper-2{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, [col] 1fr ) ;
+    grid-template-rows: repeat(1, [row] auto  );
+}
 .wrapper {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(4, [col] auto ) ;
-    grid-template-rows: repeat(2, [row] auto  );
+    grid-template-columns: repeat(4, [col] 1fr ) ;
+    grid-template-rows: repeat(2, [row] auto );
 }  
 
 .box {
@@ -174,7 +180,6 @@ h3 {
 .box h1 {
     color: #c09b5f  ;
 }
-
 .graph {
     grid-column: span 2;
 }
@@ -239,7 +244,7 @@ table a{
 .forms{
 	max-width: 500px;
 	padding: 10px 20px;
-	background: #c09b5f  ;
+	background: #acb7ae  ;
     margin: 10px;
 	padding: 20px;
     border-radius: 5px;
@@ -263,6 +268,29 @@ input {
 	color:#82716e;
 	box-shadow: 0 1px 0 #82716e inset;
 	margin-bottom: 30px;
+}
+
+select{
+    font-family: Georgia, "Times New Roman", Times, serif;
+	background: rgba(255,255,255,.1);
+	border: none;
+	border-radius: 4px;
+	font-size: 15px;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box; 
+	background-color: #e8eeef;
+	color:#82716e;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	margin-bottom: 30px;
+}
+
+/*error pages*/
+
+.error_page{
+    text-align: center;
 }
 
 
