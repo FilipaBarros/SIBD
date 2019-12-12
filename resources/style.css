@@ -21,16 +21,17 @@ body {
     font-size: 100%; 
     line-height: 1.5;
     font-family: Sans-Serif;
+    background-color: #e4decd;
 }
 h1, h2, h3, h4 {
     margin: 0; 
     line-height: 1.25
 }
 h1 {
-    font-size: 2em
+    font-size: 3em
 }
 h2 { 
-    font-size: 1.5em
+    font-size: 2.5em
 }
 h3 { 
     font-size: 1.2em
@@ -148,7 +149,7 @@ h3 {
 }
 
 .navbar a:hover{
-    color: #e4decd;
+    color: #c09b5f  ;
 }
 
 
@@ -171,7 +172,7 @@ h3 {
 }
 
 .box h1 {
-    color: #e4decd;
+    color: #c09b5f  ;
 }
 
 .graph {
@@ -207,7 +208,7 @@ tr{
 }
 
 tr:nth-child(even){
-    background-color: #e4decd;
+    background-color: #cbb692  ;
 }
 
 table a{
@@ -238,7 +239,7 @@ table a{
 .forms{
 	max-width: 500px;
 	padding: 10px 20px;
-	background: #e4decd;
+	background: #c09b5f  ;
     margin: 10px;
 	padding: 20px;
     border-radius: 5px;
@@ -274,6 +275,6 @@ lighter green: #d5dbd6
 
 The Brown-shirts: #82716e
 
-Tan Blonde: #e4decd
+Tan Blonde: #c09b5f  
 
 Blondey: #c2b490 

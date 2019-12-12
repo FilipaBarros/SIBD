@@ -50,7 +50,7 @@
 
 
     <div class = "box graph">
-        <h2>Devices per Category</h2>
+        <h3>Devices per Category</h3>
         <?php
             global $dataB;
             $queryLocal ="SELECT catname, COUNT(*) from DevicesCategories 
@@ -76,7 +76,7 @@
     </div>
 
     <div class = "box graph">
-        <h2>Components' Status</h2>
+        <h3>Components' Status</h3>
         <?php
             global $dataB;
             $queryLocal ="SELECT Components.stat, COUNT(*) from DevicesComponents 
