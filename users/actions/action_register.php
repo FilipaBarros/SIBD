@@ -18,14 +18,15 @@
         
             $newUserID=$dataB->lastInsertID();
         
-            $statement = $dataB->query("SELECT COUNT(*) FROM Systems");
-            $numSystems = $statement->fetchColumn();
+            $statement = $dataB->prepare('SELECT sysid FROM Systems');
+            $statement->execute();
+            $res=$statement->fetchAll();
 
-            for($i=1;$i<=$numSystems;$i++){
-                $statement = $dataB->prepare("INSERT INTO UserPermissions(userid,sysid,permtypeid) VALUES (?,?,?)");
-                $statement->execute(array($newUserID,$i,2));
-                print_r($statement);
+            foreach($res as $row){
+                $statement=$dataB->prepare('INSERT INTO UserPermissions(userid,sysid,permtypeid) VALUES (?,?,2)');
+                $statement->execute(array($newUserID,$row[0]));
             }
+
         }
         else{
             header('Location: ../../index.php');
