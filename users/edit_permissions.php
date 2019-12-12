@@ -17,25 +17,27 @@
             }
 
         ?>
-        <form action="actions/action_change_permissions.php" method="post">
-        <p>Change to: <select name="permission" required>
-            <?php
-            
-                global $dataB;
-                $queryLocal = "SELECT permtypeid, permtypedescription FROM PermissionTypes";
-                $result = $dataB->query($queryLocal);
-                while($row = $result->fetch()) {
-                    echo "<option value='".$row['permtypeid']."'>".$row['permtypedescription']."</option>";
+        <div class="forms">
+            <form action="actions/action_change_permissions.php" method="post">
+            <p>Change to: <select name="permission" required>
+                <?php
+                
+                    global $dataB;
+                    $queryLocal = "SELECT permtypeid, permtypedescription FROM PermissionTypes";
+                    $result = $dataB->query($queryLocal);
+                    while($row = $result->fetch()) {
+                        echo "<option value='".$row['permtypeid']."'>".$row['permtypedescription']."</option>";
 
-                }
+                    }
 
 
-            ?>
-            </select></p>
-            <input type="hidden" name="userId" value="<?=$userId?>">
-            <input type="hidden" name="sysId" value="<?=$sysId?>">
-            <input type="submit" value="Change">
-        </form>
+                ?>
+                </select></p>
+                <input type="hidden" name="userId" value="<?=$userId?>">
+                <input type="hidden" name="sysId" value="<?=$sysId?>">
+                <input class="btn btn-full" type="submit" value="Change">
+            </form>
+        </div>
     </section>
 
 

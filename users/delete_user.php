@@ -24,8 +24,10 @@ $user_details = $statement->fetchAll()[0];
 You are going to delete the user with ID: <?php echo $user_details["userid"] ?> - Name: <?php echo $user_details["username"] ?>
 </h2>
 
-<a class='btn' href="actions/action_delete_user.php?id=<?php echo $user_details["userid"] ?>">Delete</a>
-<a class='btn' href="devices.php">Go Back</a>
+<br>
+<br>
+<a class='btn btn-lg' href="actions/action_delete_user.php?id=<?php echo $user_details["userid"] ?>">Delete</a>
+<a class='btn btn-lg' href="devices.php">Go Back</a>
 
 
 <?php include('../partials/footer.php'); ?> 

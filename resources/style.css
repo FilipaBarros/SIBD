@@ -46,9 +46,20 @@ h3 {
     color: #82716e;
 }
 
+.btn-lg{
+    padding: 13px;
+    width: 165px;
+}
+
+.btn-full{
+    padding: 13px;
+    width: 100%;
+}
+
 .btn:hover{
     background: #acb7ae;
     color: #82716e;
+    cursor: pointer;
 }
 
 .main {
@@ -222,15 +233,44 @@ table a{
 }
 
 
+/*forms!*/
 
-
-
+.forms{
+	max-width: 500px;
+	padding: 10px 20px;
+	background: #e4decd;
+    margin: 10px;
+	padding: 20px;
+    border-radius: 5px;
+    line-height: 2.5;
+    color: #82716e;
+    text-align: left;
+    text-justify: inter-word;
+    border: none;
+}
+input {
+    background: rgba(255,255,255,.1);
+	border: none;
+	border-radius: 4px;
+	font-size: 15px;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box; 
+	background-color: #d5dbd6 ;
+	color:#82716e;
+	box-shadow: 0 1px 0 #82716e inset;
+	margin-bottom: 30px;
+}
 
 
 
 
 
 /*color palete: Barely Green: #acb7ae
+
+lighter green: #d5dbd6 
 
 The Brown-shirts: #82716e
 

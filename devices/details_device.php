@@ -140,6 +140,10 @@
     //print_r($allsensors);
     echo "<br>";
     echo "<h4>Sensors</h4>";
+    echo "<br>";
+    echo "<a class='btn btn-lg' href='create_sensor.php?id=".$device_id."'>Add Sensor</a>";
+    echo "<br>";
+    echo "<br>";
     echo "<table>";
     echo "<tr>";
     echo "<th> #                   </th>";
@@ -161,7 +165,6 @@
             echo "</tr>";
         }
     }
-    echo "<tr><a class='btn' href='create_sensor.php?id=".$device_id."'>Add Sensor</a></tr>";
     echo "</tr>";
     echo "</table>";
     
@@ -169,6 +172,10 @@
     //print_r($allactuators);
     echo "<br>";
     echo "<h4>Actuators</h4>";
+    echo "<br>";
+    echo "<a class='btn btn-lg' href='create_actuator.php?id=".$device_id."'>Add Actuator</a>";
+    echo "<br>";
+    echo "<br>";
     echo "<table>";
     echo "<tr>";
     echo "<th> #                   </th>";
@@ -188,7 +195,6 @@
             echo "</tr>";
         }
     }
-    echo "<tr><a class='btn' href='create_actuator.php?id=".$device_id."'>Add Actuator</a></tr>";
     echo "</tr>";
     echo "</table>";
 

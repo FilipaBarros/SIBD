@@ -22,9 +22,10 @@
 <h2>
 You are going to delete the device with ID: <?php echo $dev_details["devid"] ?> - Name: <?php echo $dev_details["devname"] ?>
 </h2>
+<br>
 
-<a class='btn' href="actions/action_delete_device.php?id=<?php echo $dev_details["devid"] ?>">Delete</a>
-<a class='btn' href="devices.php">Go Back</a>
+<a class="btn btn-lg" href="actions/action_delete_device.php?id=<?php echo $dev_details["devid"] ?>">Delete</a>
+<a class="btn btn-lg" href="devices.php">Go Back</a>
 
 
 <?php include('../partials/footer.php'); ?> 

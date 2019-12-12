@@ -15,20 +15,26 @@
         $res = get_table($id)[0];
         //print_r($res);
         ?>
-        <form action="actions/action_edit_profile.php" method="post">
-            <p>Username: <input type="text" name="username" placeholder="Username" value="<?php echo $res['username']?>"></p>
-            <p>Contact: <input type="email" name="contact" placeholder="Contact" value="<?php echo $res['contact']?>"></p>
-            <p>Password: <input type="password" name="password" placeholder="Password" value="<?php echo $res['passphrase']?>"></p>
-            <input type="hidden" name="id" value="<?=$id?>">
-            <input type="submit" value="Update">
-        </form>
+        <div class="forms">
+            <form action="actions/action_edit_profile.php" method="post">
+                <p>Username: <input type="text" name="username" placeholder="Username" value="<?php echo $res['username']?>"></p>
+                <p>Contact: <input type="email" name="contact" placeholder="Contact" value="<?php echo $res['contact']?>"></p>
+                <p>Password: <input type="password" name="password" placeholder="Password" value="<?php echo $res['passphrase']?>"></p>
+                <input type="hidden" name="id" value="<?=$id?>">
+                <input class="btn btn-full" type="submit" value="Update">
+                <br>
+                <br>
+            </form>
+        </div>
 
-        <h3><a href="delete_account.php">Delete Account</a></h3>
     </section> 
     <section id="userInfo">
         <h2>Permissions Info</h2>
+        <br>
         <?php
-            $statement = $dataB->prepare("SELECT permtypedescription, sysid FROM UserPermissions JOIN PermissionTypes ON PermissionTypes.permtypeid = UserPermissions.permtypeid WHERE userid=?");
+            $statement = $dataB->prepare("SELECT permtypedescription, sysid FROM UserPermissions
+            JOIN PermissionTypes ON PermissionTypes.permtypeid = UserPermissions.permtypeid 
+            WHERE userid=?");
             $statement->execute(array($id));
             $permissions = $statement->fetchAll();
 
@@ -46,8 +52,10 @@
         ?>
 
     </section>
-
-    <?php 
+    <h2>Advanced Options</h2>
+    <br>
+    <a class="btn input-btn btn-full" href="delete_account.php">Delete Account</a>
+<?php 
 } 
 include('../partials/footer.php')
 ?>  
