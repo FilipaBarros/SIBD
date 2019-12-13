@@ -1,6 +1,19 @@
 <?php include ('../partials/header.php') ?>    
 <section id="createLocation">
     <?php
+        global $dataB;
+        $statement=$dataB->prepare("SELECT permtypeid FROM UserPermissions WHERE userid=?");
+        $statement->execute(array($_SESSION['userid']));
+        $userPerm=$statement->fetchAll();
+        $check=0;
+        foreach($userPerm as $tryPls) {
+            if($tryPls[0]==3){
+                $check=1;
+            }
+        }
+        if($check!=1){
+            header("Location: ../partials/500.php");
+        }
         $title = "Create Local";
         echo "<h2>" . $title . "</h2>";
     ?>
