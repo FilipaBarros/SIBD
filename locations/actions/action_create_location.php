@@ -1,5 +1,5 @@
 <?php
-    require_once('config/init.php');
+    require_once('../../config/init.php');
 
     $country=$_POST['country'];
     $city=$_POST['city'];
