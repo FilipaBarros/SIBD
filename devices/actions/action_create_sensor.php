@@ -8,7 +8,7 @@
     $units=$_POST['sensorUnits'];
     $periodicity=$_POST['sensorPeriodicity'];
 
-    $devId=$_POST['devId'];    
+    $devId=$_POST['id'];    
     global $dataB;
     $statement=$dataB->prepare('INSERT INTO Components(compname,compcode,stat) VALUES (?,?,?)');
     $statement->execute(array($name,$code,$status));
@@ -24,6 +24,6 @@
     $statement->execute(array($units,$periodicity,$name,$code,$status));
     print_r($statement);
 
-    header('Location: ../create_sensor.php?devId='.$devId);
+    header('Location: ../create_sensor.php?id='.$devId);
 
 ?>

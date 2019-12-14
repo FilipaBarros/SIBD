@@ -1,4 +1,5 @@
-<?php include ('../partials/header.php') ?>    
+<?php include ('../partials/header.php') ?>   
+<?php if (isset($_SESSION['username'])) { ?>    
 <section id="createSystem">
     <?php
         $title = "Create System";
@@ -11,4 +12,6 @@
         <input type="submit" value="Create">
     </form>
 </section> 
-<?php include('../partials/footer.php'); ?> 
+<?php 
+}
+include('../partials/footer.php'); ?> 

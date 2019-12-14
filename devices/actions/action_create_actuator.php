@@ -7,7 +7,7 @@
     $status=$_POST['actuatorStatus'];
     $func=$_POST['function'];
 
-    $devId=$_POST['devId'];    
+    $devId=$_POST['id'];    
     global $dataB;
     $statement=$dataB->prepare('INSERT INTO Components(compname,compcode,stat) VALUES (?,?,?)');
     $statement->execute(array($name,$code,$status));
@@ -23,6 +23,6 @@
     $statement->execute(array($func,$name,$code,$status));
     print_r($statement);
 
-    header('Location: ../create_actuator.php?devId='.$devId);
+    header('Location: ../create_actuator.php?id='.$devId);
 
 ?>

@@ -13,7 +13,7 @@
 <?php
     if(!isset($_SESSION['username'])){
         if($_SERVER['REQUEST_URI']!="/SIBD/index.php"){
-            header('Location: ../SIBD/index.php');
+            header('Location: /SIBD/index.php');
         }    
     }
     $url = $_SERVER['REQUEST_URI'];        

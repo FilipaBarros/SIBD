@@ -1,13 +1,24 @@
 
 <?php include('../partials/header.php'); ?> 
 <?php if (isset($_SESSION['username'])) { ?> 
+    <?php if ($_GET['id']==''){
+        header ("Location: ../partials/404.php");
+    } 
+    global $dataB;
+    $statement = $dataB->prepare("SELECT sysid FROM Systems WHERE sysid=?");
+    $statement->execute(array($_GET['id']));
+    $putId= $statement->fetchColumn();
+    if($putId==FALSE){
+        header ("Location: ../partials/404.php");
+    }
+
+?>
 <section id="createDevice">
         <?php
           global $dataB;
           $statement= $dataB->prepare("SELECT permtypeid FROM UserPermissions WHERE sysid=? AND userid=?");
           $statement->execute(array($_GET['id'],$_SESSION['userid']));
           $userPerm= $statement->fetchColumn();
-
           if($userPerm!=3){
               header('Location: ../partials/500.php');
           }
