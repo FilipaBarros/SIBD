@@ -18,6 +18,10 @@
 <table>
 <?php
 $res = get_table();
+echo "<br>";
+echo "<a class='btn btn-lg' href='create_location.php'>Add Location</a>";
+echo "<br>";
+echo "<br>";
 echo " <tr> ";
 echo "<th> # </th>";
 echo "<th> Country </th>";

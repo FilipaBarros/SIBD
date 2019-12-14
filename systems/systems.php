@@ -15,6 +15,10 @@ function get_table()
 <table>
 <?php
 $res = get_table();
+echo "<br>";
+echo "<a class='btn btn-lg' href='create_system.php'>Add System</a>";
+echo "<br>";
+echo "<br>";
 echo " <tr> ";
 echo "<th> # </th>";
 echo "<th> Category </th>";
