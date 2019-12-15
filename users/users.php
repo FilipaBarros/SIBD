@@ -44,7 +44,7 @@ foreach ($_SESSION["systems"] as $sysid => $permision) {
         echo "<td>".$row['userid'] . " </td>";
         echo "<td>".$row['username'] . " </td>";
         echo "<td>".$row['contact'] . " </td>";
-        echo "<td><a class='prettylink' href='". $SERVERPATH ."/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
+        echo "<td><a class='prettylink' href='http://". $RESOURCEPATH ."/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
         echo "<td>".$row['sysdescription'] . " </td>";
         echo "<td>".$row['permtypedescription'] . " </td>";
         // gives the current item of the current attribute

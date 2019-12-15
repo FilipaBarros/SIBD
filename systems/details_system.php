@@ -48,7 +48,7 @@
     echo "</tr> ";
     foreach ($res as $row) {
         echo "<tr>";
-        echo "<td><a class='prettylink' href='http://". $RESOURCEPATH ."/devices/details_device.php'>".$row['devid'] . "</td>";
+        echo "<td><a class='prettylink' href='http://". $RESOURCEPATH ."/devices/details_device.php?id=".$row['devid'] ."'>".$row['devid'] . "</td>";
         //echo "<td>".$row['devid'] . " </td>";
         echo "<td>".$row['devname'] . " </td>";
         echo "<td>".$row['manufacturer'] . " </td>";
