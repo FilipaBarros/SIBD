@@ -113,7 +113,7 @@ CREATE TABLE Components(
     compid INTEGER NOT NULL PRIMARY KEY,
     compname TEXT NOT NULL,
     compcode INTEGER NOT NULL,
-    stat TEXT  NOT NULL
+    stat TEXT NOT NULL
 );
 
 
