@@ -9,12 +9,11 @@
     $swartefact=$_POST['swartefact'];
     $ip=$_POST['ip'];
     $status=$_POST['status'];
-    $local=$_POST['local'];
 
    
     global $dataB;
-    $statement = $dataB->prepare('UPDATE Devices SET devname =?, manufacturer=?, devdescription=?, swversion=?, swartefact=?, ip=?, stat=?, locid=? WHERE devid=?');
-    $statement->execute(array($deviceName,$manufacturer,$description,$swversion,$swartefact,$ip,$status,$local,$id));
+    $statement = $dataB->prepare('UPDATE Devices SET devname =?, manufacturer=?, devdescription=?, swversion=?, swartefact=?, ip=?, stat=? WHERE devid=?');
+    $statement->execute(array($deviceName,$manufacturer,$description,$swversion,$swartefact,$ip,$status,$id));
   
     header('Location: http://'.$RESOURCEPATH.'/devices/devices.php');
 ?>
