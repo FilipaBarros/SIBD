@@ -47,7 +47,7 @@ It is recommended to do this process locally in your machine.
 
 2. ```$ sqlite3 mydatabase.db < scripts/db_fill.sql```
 
-![docs/file.jpg](aoisdhoiasdh)
+
 
 ### Installing in [gnomo.fe.up.pt](gnomo.fe.up.pt)
 
@@ -69,3 +69,22 @@ It is recommended to do this process locally in your machine.
 ## Dependencies
 
 - [Font Awesome](http://fontawesome.com/)
+
+## Screenshots
+
+![docs/index.png](Index)
+
+![docs/dashboard.png](Dashboard)
+
+![docs/profile.png](User Profile Page)
+
+![docs/devices.png](Devices)
+
+![docs/deviceinfo.png](Device Info Page)
+
+![docs/systems.png](Systems Page)
+
+![docs/users.png](Users Page)
+
+
+
