@@ -72,19 +72,20 @@ It is recommended to do this process locally in your machine.
 
 ## Screenshots
 
-![index](docs/index.png)
+![Index Page](./docs/screenshots/index.png)
 
-![docs/dashboard.png](Dashboard)
+![Dashboard Page](./docs/screenshots/dashboard.png)
 
-![docs/profile.png](User Profile Page)
+![Profile Page](./docs/screenshots/profile.png)
 
-![docs/devices.png](Devices)
+![Devices Page](./docs/screenshots/devices.png)
 
-![docs/deviceinfo.png](Device Info Page)
+![Devices Info Page](./docs/screenshots/devicesinfo.png)
 
-![docs/systems.png](Systems Page)
+![Systems Page](./docs/screenshots/systems.png)
 
-![docs/users.png](Users Page)
+![Users Page](./docs/screenshots/users.png)
+
 
 
 
