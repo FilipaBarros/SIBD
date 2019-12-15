@@ -11,8 +11,10 @@
 
     function get_devices($system_id){
         global $dataB;
-        $statement = $dataB->prepare("SELECT * FROM Devices
-        WHERE Devices.sysid=? ");
+        $statement = $dataB->prepare("SELECT * from DevicesCategories 
+        join Categories on DevicesCategories.catid = Categories.catid 
+        join Devices on DevicesCategories.devid = Devices.devid 
+        WHERE Devices.sysid= ? ");
         $statement->execute(array($system_id));
         $devices = $statement->fetchAll();
         return $devices;
@@ -25,13 +27,14 @@
 
 
 <h2>System Info</h2>
-
+<br>
+<h3>System Devices</h3>
+<br>
 <?php
     //Devices associated to the system 
     $res = get_devices($system_id);
-    echo "<br>";
     echo "<table>";
-    echo " <tr> ";
+    echo "<tr> ";
     echo "<th>  #           </th>";
     echo "<th>  DevName     </th>";
     echo "<th>  Manufacturer</th>";
@@ -42,10 +45,11 @@
     echo "<th>  Status      </th>";
     echo "<th>  Local ID    </th>";
     echo "<th>  System ID   </th>";
-    echo " </tr> ";
+    echo "</tr> ";
     foreach ($res as $row) {
         echo "<tr>";
-        echo "<td>".$row['devid'] . " </td>";
+        echo "<td><a href='/SIBD/devices/details_device.php'>".$row['devid'] . "</td>";
+        //echo "<td>".$row['devid'] . " </td>";
         echo "<td>".$row['devname'] . " </td>";
         echo "<td>".$row['manufacturer'] . " </td>";
         echo "<td>".$row['devdescription'] . " </td>";
@@ -54,16 +58,49 @@
         echo "<td>".$row['ip'] . " </td>";
         echo "<td>".$row['stat'] . " </td>";
         echo "<td><a href='/SIBD/locations/locations.php'>".$row['locid'] . "</td>";
-        echo "<td>".$row['sysid'] . " </td>";
+        echo "<td><a href='/SIBD/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
         //devid, devname, manufacturer, devdescription, swversion, swartefact, ip, stat, locid, sysid
         echo "</tr>";
     }
     echo "</table>";
+?>
 
+<br>
+<h3>Devices per Category</h3>
+<br>
+<?php
+    global $dataB;
+    $queryLocal ="SELECT catname, COUNT(*) from DevicesCategories 
+    join Categories on DevicesCategories.catid = Categories.catid 
+    join Devices on DevicesCategories.devid = Devices.devid 
+    WHERE Devices.sysid = ?
+    GROUP BY catname";
+    $statement = $dataB->prepare($queryLocal);
+    $statement->execute(array($system_id));
+    $devices_category = $statement->fetchAll();
+    //print_r($devices_category);
+    echo "<table>";
+    echo "<tr>";
+    echo "<th>Category Name</th>";
+    echo "<th>Number of Devices</th>";
+    echo "</tr>";
+    foreach ($devices_category as $row) {
+        echo "<tr>";
+        for ($j = 0; $j < 2; $j++) { // we're expecting 2 attributes
+            echo "<td> " . $row[$j] . " </td>";
+        }
+    }
+    echo "</table>";
+?>
+
+
+<br>
+<h3>System Administrators</h3>
+<br>
+<?php
     //Users with admin permissisons to the system 
     $res2 = get_users_admin_perm($system_id);
     //print_r($res2);
-    echo "<br>";
     echo "<table>";
     echo " <tr> ";
     echo "<th> #           </th>";
@@ -83,9 +120,6 @@
     }
     echo "</tr>";
     echo "</table>";
-
-
-    //categories associated to the different devices -> TODO
 ?>
 
 

@@ -4,5 +4,8 @@
     $statement = $dataB->prepare("DELETE FROM Devices WHERE devid = ?");
     $statement->execute(array($id));
 
+    $statement = $dataB->prepare("DELETE FROM DevicesComponents WHERE devid = ?");
+    $statement->execute(array($id));
+
     header("Location: ../devices.php");
 ?>

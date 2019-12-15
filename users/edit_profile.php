@@ -9,8 +9,8 @@
         global $dataB;
         $statement = $dataB->prepare("SELECT * FROM Users WHERE userid=?");
         $statement->execute(array($id));
-        $locations = $statement->fetchAll();
-        return $locations;
+        $systems = $statement->fetchAll();
+        return $systems;
     }
     $res = get_table($id)[0];
     //print_r($res);
@@ -32,7 +32,8 @@
                 echo "<th> Permission </th>";
                 echo "</tr>";
                 foreach($permissions as $row){
-                    echo "<tr><td>".$row['sysid']."</td>";
+                    echo "<tr><td><a href='/SIBD/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
+                    //echo "<tr><td>".$row['sysid']."</td>";
                     echo "<td>".$row['permtypedescription']."</td></tr>";
                 }
                 echo "</table>";

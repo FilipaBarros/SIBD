@@ -30,9 +30,20 @@ echo "<th>  Actions     </th>";
 echo " </tr> ";
 foreach ($res as $row) {
     echo "<tr>";
-    for ($j = 0; $j < 10; $j++) { // we're expecting 10 attributes
-        echo "<td> " . $row[$j] . " </td>"; // gives the current item of the current attribute
-    }
+    echo "<td>".$row['devid'] . " </td>";
+    echo "<td>".$row['devname'] . " </td>";
+    echo "<td>".$row['manufacturer'] . " </td>";
+    echo "<td>".$row['devdescription'] . " </td>";
+    echo "<td>".$row['swversion'] . " </td>";
+    echo "<td>".$row['swartefact'] . " </td>";
+    echo "<td>".$row['ip'] . " </td>";
+    echo "<td>".$row['stat'] . " </td>";
+    echo "<td><a href='/SIBD/locations/locations.php'>".$row['locid'] . "</td>";
+    echo "<td><a href='/SIBD/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
+    //echo "<td>".$row['sysid'] . " </td>";
+    //for ($j = 0; $j < 10; $j++) { // we're expecting 10 attributes
+    //  echo "<td> " . $row[$j] . " </td>"; // gives the current item of the current attribute
+    //}
     $statement=$dataB->prepare("SELECT permtypeid FROM UserPermissions WHERE sysid=? AND userid=?");
     $statement->execute(array($row[9],$_SESSION['userid']));
     $userPerm=$statement->fetchColumn();
