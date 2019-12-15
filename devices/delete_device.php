@@ -1,5 +1,20 @@
 <?php include('../partials/header.php'); ?> 
 
+<?php if ($_GET['id']==''){
+    header ("Location: ../partials/404.php");
+    }
+    global $dataB;
+    $statement = $dataB->prepare("SELECT devid FROM Devices WHERE devid=?");
+    $statement->execute(array($_GET['id']));
+    $putId= $statement->fetchColumn();
+    if($putId==FALSE){
+        header ("Location: ../partials/404.php");
+    }       
+?>
+
+
+
+
 <h1>Delete Device</h1>
 
 <?php

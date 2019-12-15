@@ -1,4 +1,21 @@
 <?php include('../partials/header.php'); ?> 
+
+<?php if ($_GET['id']==''){
+    header ("Location: ../partials/404.php");
+    }
+    global $dataB;
+    $statement = $dataB->prepare("SELECT sysid FROM Systems WHERE sysid=?");
+    $statement->execute(array($_GET['id']));
+    $putId= $statement->fetchColumn();
+    if($putId==FALSE){
+        header ("Location: ../partials/404.php");
+    }      
+    
+?>
+
+
+
+
 <?php
     $system_id = $_GET['id']; 
     function get_users_admin_perm($system_id){

@@ -1,5 +1,19 @@
 <?php include('../partials/header.php'); ?> 
 
+<?php if ($_GET['id']==''){
+    header ("Location: ../partials/404.php");
+    }
+    global $dataB;
+    $statement = $dataB->prepare("SELECT userid FROM Users WHERE userid=?");
+    $statement->execute(array($_GET['id']));
+    $putId= $statement->fetchColumn();
+    if($putId==FALSE){
+        header ("Location: ../partials/404.php");
+    }      
+    
+?>
+
+
 <h1>Delete User</h1>
 
 <?php

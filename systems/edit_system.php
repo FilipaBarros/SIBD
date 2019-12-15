@@ -1,5 +1,18 @@
 <?php include('../partials/header.php') ?> 
-<?php if (isset($_SESSION['username'])) { ?>    
+<?php if (isset($_SESSION['username'])) { ?>  
+
+<?php if ($_GET['id']==''){
+    header ("Location: ../partials/404.php");
+    }
+    global $dataB;
+    $statement = $dataB->prepare("SELECT sysid FROM Systems WHERE sysid=?");
+    $statement->execute(array($_GET['id']));
+    $putId= $statement->fetchColumn();
+    if($putId==FALSE){
+        header ("Location: ../partials/404.php");
+    }      
+    
+?>
 <h1>Edit System</h1>
 <section id="editSystem">
         <?php

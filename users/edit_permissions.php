@@ -1,5 +1,30 @@
 <?php include('../partials/header.php') ?> 
 <?php if (isset($_SESSION['username'])) { ?> 
+    <?php if ($_GET['id']==''){
+    header ("Location: ../partials/404.php");
+    }
+    global $dataB;
+    $statement = $dataB->prepare("SELECT userid FROM Users WHERE userid=?");
+    $statement->execute(array($_GET['id']));
+    $putId= $statement->fetchColumn();
+    if($putId==FALSE){
+        header ("Location: ../partials/404.php");
+    }      
+    
+?>
+
+<?php if ($_GET['id']==''){
+    header ("Location: ../partials/404.php");
+    }
+    global $dataB;
+    $statement = $dataB->prepare("SELECT sysid FROM Systems WHERE sysid=?");
+    $statement->execute(array($_GET['id']));
+    $putId= $statement->fetchColumn();
+    if($putId==FALSE){
+        header ("Location: ../partials/404.php");
+    }      
+    
+?>
     <h1>Change Permissions</h1>
     <?php 
         $userId=$_GET['id'];

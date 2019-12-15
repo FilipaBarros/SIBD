@@ -1,6 +1,20 @@
 <?php include('../partials/header.php'); ?> 
 
+<?php if ($_GET['id']==''){
+    header ("Location: ../partials/404.php");
+    }
+    global $dataB;
+    $statement = $dataB->prepare("SELECT sysid FROM Systems WHERE sysid=?");
+    $statement->execute(array($_GET['id']));
+    $putId= $statement->fetchColumn();
+    if($putId==FALSE){
+        header ("Location: ../partials/404.php");
+    }      
+    
+?>
+
 <h1>Delete System</h1>
+
 
 <?php
 $id = $_GET["id"];

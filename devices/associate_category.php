@@ -1,6 +1,9 @@
 <?php include('../partials/header.php'); ?> 
 <?php if (isset($_SESSION['username'])) { ?> 
+
+
 <?php if ($_GET['id']==''){
+
         header ("Location: ../partials/404.php");
     }      
     global $dataB;
