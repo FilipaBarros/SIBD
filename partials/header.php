@@ -1,9 +1,20 @@
-<?php
+<?php/*
     if(isset($_SERVER['CONTEXT_DOCUMENT_ROOT']))
         $SERVERPATH = $_SERVER['CONTEXT_DOCUMENT_ROOT']."/SIBD";
     else
         $SERVERPATH = $_SERVER['DOCUMENT_ROOT']."/SIBD";
     require_once($SERVERPATH . '/config/init.php');    
+*/?>
+<?php
+    if( $_SERVER['SERVER_NAME'] != "_")
+        $RESOURCEPATH = $_SERVER['SERVER_NAME'] . $_SERVER['CONTEXT_PREFIX'] . "/SIBD";
+    else
+        $RESOURCEPATH = $_SERVER['HTTP_HOST']."/SIBD";
+    if(isset($_SERVER['CONTEXT_DOCUMENT_ROOT']))
+        $SERVERPATH = $_SERVER['CONTEXT_DOCUMENT_ROOT']."/SIBD";
+    else
+        $SERVERPATH  = $_SERVER['DOCUMENT_ROOT']."/SIBD";
+    require_once( $SERVERPATH . '/config/init.php');    
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +27,7 @@
 
 <?php
     if(!isset($_SESSION['username'])){
-        if(!strpos($_SERVER['REQUEST_URI'],"/SIBD/index.php")){
+        if(!strpos($_SERVER['REQUEST_URI'],"index.php")){
             header("Location: http://". $RESOURCEPATH ."/index.php");
         }    
     }

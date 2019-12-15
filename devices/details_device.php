@@ -156,6 +156,11 @@
 <h4>Sensors</h4>
 <br>
 <?php
+    $statement=$dataB->prepare("SELECT permtypeid FROM UserPermissions 
+    join Devices on UserPermissions.sysid = Devices.sysid 
+    WHERE Devices.devid=? AND userid=?");
+    $statement->execute(array($device_id,$_SESSION['userid']));
+    $userPerm=$statement->fetchColumn();
     echo "<a class='btn btn-lg' href='http://" . $RESOURCEPATH ."/devices/create_sensor.php?id=".$device_id."'>Add Sensor</a>";
     echo "<br>";
     echo "<br>";
@@ -170,7 +175,9 @@
     echo "<th> Component Name      </th>";
     echo "<th> Component Code      </th>";
     echo "<th> Status              </th>";
+    if($userPerm==3 || $userPerm == 1){
     echo "<th>  Actions     </th>";
+    }
     echo " </tr> ";
     foreach($allsensors as $res){
         for ($j = 0; $j < count($res); $j++) { 
@@ -181,6 +188,15 @@
             echo "<td> " . $res[$j]['compname'] . " </td>";
             echo "<td> " . $res[$j]['compcode'] . " </td>";
             echo "<td> " . $res[$j]['stat'] . " </td>";
+            if($userPerm==1){
+                echo "<td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/actions/action_toggle_component_stat.php?devid=" . $device_id . "&compid=".$res[$j]['sensid'].  "'>Toggle Status</a></td>";
+            }
+            if($userPerm==3){
+                /*echo "  <td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/edit_device.php?id=" . $row[0] . "&compid=".$row[9]. "'>Edit</a>";
+                */
+                echo "<td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/actions/action_delete_component.php?devid=" . $device_id . "&compid=".$res[$j]['sensid'].  "'>Delete</a>";
+                echo "<a class='btn' href='http://" . $RESOURCEPATH ."/devices/actions/action_toggle_component_stat.php?devid=" . $device_id . "&compid=".$res[$j]['sensid'].  "'>Toggle Status</a></td>";
+            }
             echo "</tr>";
         }
     }
@@ -205,7 +221,9 @@
     echo "<th> Component Name      </th>";
     echo "<th> Component Code      </th>";
     echo "<th> Status              </th>";
-    echo "<th>  Actions     </th>";
+    if($userPerm==3 || $userPerm == 1){
+        echo "<th>  Actions     </th>";
+    }
     echo " </tr> ";
     foreach($allactuators as $res){
         for ($j = 0; $j < count($res); $j++) { 
@@ -215,23 +233,21 @@
             echo "<td> " . $res[$j]['compname'] . " </td>";
             echo "<td> " . $res[$j]['compcode'] . " </td>";
             echo "<td> " . $res[$j]['stat'] . " </td>";
-            echo "</tr>";
-            $statement=$dataB->prepare("SELECT permtypeid FROM UserPermissions WHERE sysid=? AND userid=?");
-            $statement->execute(array($row[9],$_SESSION['userid']));
+            $statement=$dataB->prepare("SELECT permtypeid FROM UserPermissions 
+            join Devices on UserPermissions.sysid = Devices.sysid 
+            WHERE Devices.devid=? AND userid=?");
+            $statement->execute(array($device_id,$_SESSION['userid']));
             $userPerm=$statement->fetchColumn();
-            if($userPerm==3){
-                echo "  <td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/edit_device.php?id=" . $row[0] . "&sysid=".$row[9]. "'>Edit</a>";
-                echo "  <a class='btn' href='http://" . $RESOURCEPATH ."/devices/delete_device.php?id=" . $row[0] . "&sysid=".$row[9].  "'>Delete</a>";
-                echo "  <a class='btn' href='http://" . $RESOURCEPATH ."/devices/details_device.php?id=" . $row[0] . "'>Info</a></td>";
-            }
-            if($userPerm==2){
-                echo "  <td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/details_device.php?id=" . $row[0] . "'>Info</a></td>";
-            }
             if($userPerm==1){
-                echo "  <td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/edit_device.php?id=" . $row[0] . "&sysid=".$row[9]. "'>Edit</a>";
-                echo "  <a class='btn' href='http://" . $RESOURCEPATH ."/devices/details_device.php?id=" . $row[0] . "'>Info</a>";
-        
+                echo "<td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/actions/action_toggle_component_stat.php?devid=" . $device_id . "&compid=".$res[$j]['actid'].  "'>Toggle Status</a></td>";
             }
+            if($userPerm==3){
+                /*echo "  <td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/edit_device.php?id=" . $row[0] . "&compid=".$row[9]. "'>Edit</a>";
+                */
+                echo "<td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/actions/action_delete_component.php?devid=" . $device_id . "&compid=".$res[$j]['actid'].  "'>Delete</a>";
+                echo "<a class='btn' href='http://" . $RESOURCEPATH ."/devices/actions/action_toggle_component_stat.php?devid=" . $device_id . "&compid=".$res[$j]['actid'].  "'>Toggle Status</a></td>";
+            }
+            echo "</tr>";
         }
     }
     echo "</tr>";

@@ -43,7 +43,7 @@ h3 {
     margin: 3px;
     text-align: center;
     text-decoration: none;
-    width: 100px;
+    width: 180px;
     border: 2px solid #51bcdae8;
     background-color:#51bcdae8;
     color:#f4f3ef;
@@ -113,7 +113,7 @@ h3 {
 
 .a-locations:before {
     font-size: 35px;
-    content: "\f14e";
+    content: "\f5a0";
 	font-family: fontawesome;
 }
 
@@ -124,12 +124,12 @@ h3 {
 }
 .a-systems:before {
     font-size: 35px;
-    content: "\f247";
+    content: "\f542";
 	font-family: fontawesome;
 }
 .a-users:before{
     font-size: 35px;
-    content: "\f2b9";
+    content: "\f0c0";
 	font-family: fontawesome;
 }
 
