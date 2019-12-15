@@ -1,21 +1,21 @@
 # SIBD
-###### Authors: 
+## Authors: 
 
 Ana Barros - up201305683@fe.up.pt
 
 Hugo Rodrigues - up201505296@fe.up.pt
 
-###### Context:
+## Context:
 
 This project was developed under the course Information Systems and Databases of Faculty Faculty of Engineering of the University of Porto
 
-###### Goals of the project: 
+## Goals of the project: 
 
 Most companies/institutions make use of different devices, aggregated into systems that belong to different categories. From printers to coffee machines, these systems can become quite complex. 
 
 As such, in order to facilitate the management of such devices that are connected to a network, we decided to develop a software solution for this purpose. 
 
-###### System overview: 
+## System overview: 
 
 Typically, there are several devices in company, for that reason is necessary to be able to distinguish them for each other, for that reason for each device should have an ID, IP, name, manufacturer, SW version and artefact, as well as its operational status should be stored. Also, depending on the kind of device we are dealing with, its hardware components can be actuators, sensors or both of them. In general components have associated a name, code and status, then if it is an actuator its function or “side-effect” should be stored, for sensors its periodicity and units should be stored. The user that creates the device can associate one or more categories to it, this categories serve the purpose of making the job of assembling the devices with similar functionalities easier.
 Inside a company there are different systems composed by multiple devices that are connected to the network (e.g computer system, the coffee machines system, sprinkler system, etc), a user should know the category and function of a system.
@@ -32,5 +32,4 @@ After some iteration the designed system was the following:
 #TODO: insert a new Relational model with the same corrections
 
 
-
-###### How to install: 
+## How to setup: 
