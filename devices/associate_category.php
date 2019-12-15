@@ -23,13 +23,25 @@
         global $dataB;
         $queryLocal="SELECT catid,catname FROM Categories";
         $result = $dataB->query($queryLocal);
+        //while ($row = $result->fetch()){
+            //echo '<a href="http://'.$RESOURCEPATH .'/devices/actions/action_associate_category.php?category='.$row['catid'].'&id='.$id.'"><p>'.$row['catname'].'</p></a>';
+        //
+    ?>
+    <form action="actions/action_associate_category.php" method="post">
+    <table>        
+    <?php
         while ($row = $result->fetch()){
-            echo '<a href="http://'.$RESOURCEPATH .'/devices/actions/action_associate_category.php?category='.$row['catid'].'&id='.$id.'"><p>'.$row['catname'].'</p></a>';
+            //echo '<a href="http://'.$RESOURCEPATH .'/devices/actions/action_associate_category.php?category='.$row['catid'].'&id='.$id.'"><p>'.$row['catname'].'</p></a>';
+            echo '<tr><td>'.$row['catname'].'</td><td><input type="checkbox" name="categories[]" value='.$row['catid'].'></td></tr>';
         }
     ?>
+        <input type="hidden" name="devId" value="<?=$id?>" required>
+    </table>
+    <input class="btn btn-full" type="submit" value="Associate">
+    </form>
     <br>
     <br>
-    <a class='btn btn-lg' href="http://<?php echo $RESOURCEPATH ?>/devices/devices.php">Finish</a>
+    <!-- <a class='btn btn-lg' href="http://<?php //echo $RESOURCEPATH ?>/devices/actions">Finish</a> -->
 </div>
 
 <?php 
