@@ -34,27 +34,7 @@
                 <p>Status: <select name="status" required>
                     <option value="working">Working</option>
                     <option value="offline">Offline</option>
-                </select></p>
-                <p>Local ID: <select name ="local" value="<?php echo $res['locid']?>"required>
-                    <?php
-                    global $dataB;
-                    $queryLocal = "SELECT locid FROM Locals";
-                    $result = $dataB->query($queryLocal);
-                    while ($row = $result->fetch()) {
-                        echo "<option value=\"local\">" . $row['locid'] . "</option>";
-                    }
-                    ?>
-                </select></p>
-                <p>System ID: <select name ="system" value="<?php echo $res['sysid']?>"required>
-                    <?php
-                    global $dataB;
-                    $queryLocal = "SELECT sysid FROM Systems";
-                    $result = $dataB->query($queryLocal);
-                    while ($row = $result->fetch()) {
-                        echo "<option value=\"system\">" . $row['sysid'] . "</option>";
-                    }
-                    ?>
-                </select></p>
+                 </select></p>
                 <input class="btn btn-full" type="submit" value="Update">
             </form>
         </div>
