@@ -77,14 +77,11 @@
     </div>
 
     <div class = "box graph">
-        <h3>Components' Status</h3>
+        <h3>Devices' Status</h3>
         <br>
         <?php
             global $dataB;
-            $queryLocal ="SELECT Components.stat, COUNT(*) from DevicesComponents 
-            join Components on DevicesComponents.compid = Components.compid
-            join Devices on DevicesComponents.devid = Devices.devid 
-            GROUP BY Components.stat";
+            $queryLocal ="SELECT stat, COUNT(*) from Devices GROUP BY stat";
             $result = $dataB->query($queryLocal);
             $components_status = $result->fetchAll();
             //print_r($components_status);

@@ -106,8 +106,6 @@ CREATE TABLE DevicesComponents(
 );
 
 
-
-
 -- components table 
 CREATE TABLE Components(
     compid INTEGER NOT NULL PRIMARY KEY,
@@ -124,7 +122,7 @@ CREATE TABLE Sensors(
     periodicity TEXT NOT NULL,
     compname TEXT NOT NULL,
     compcode INTEGER NOT NULL,
-    stat TEXT  NOT NULL,
+    stat TEXT NOT NULL,
 	CONSTRAINT sensors_components FOREIGN KEY (sensid) REFERENCES Components(compid) ON DELETE CASCADE
 );
 
@@ -134,7 +132,7 @@ CREATE TABLE Actuators(
     func TEXT NOT NULL,
     compname TEXT NOT NULL,
     compcode INTEGER NOT NULL,
-    stat TEXT  NOT NULL,
+    stat TEXT NOT NULL,
 	CONSTRAINT actuators_components FOREIGN KEY (actid) REFERENCES Components(compid) ON DELETE CASCADE
 );
 
