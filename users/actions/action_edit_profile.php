@@ -24,6 +24,13 @@
         }
     }
     else{
+        if($pass!=""){
+            $statement = $dataB->prepare('UPDATE Users SET passphrase=?, contact=? WHERE userid=?');
+            $statement->execute(array(sha1($pass),$contact,$id));
+        } else {
+            $statement = $dataB->prepare('UPDATE Users SET contact=? WHERE userid=?');
+            $statement->execute(array($contact,$id));
+        }
         header('Location: http://'.$RESOURCEPATH.'/users/edit_profile.php');
     }
 
