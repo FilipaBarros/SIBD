@@ -1,6 +1,16 @@
 <?php include('../partials/header.php') ?> 
 <?php if (isset($_SESSION['username'])) { ?> 
 <h1>Edit Device</h1>
+<?php
+    global $dataB;
+    $statement=$dataB->prepare('SELECT COUNT(devid) AS num FROM Devices WHERE devid=?');
+    $statement->execute(array($_GET["id"]));
+    $check=$statement->fetchColumn();
+
+    if($check==0){
+        header('Location: http://'.$RESOURCEPATH.'/partials/404.php');
+    }
+?>
 <section id="editDevice">
         <?php
         $id = htmlspecialchars($_GET["id"]);

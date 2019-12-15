@@ -170,6 +170,7 @@
     echo "<th> Component Name      </th>";
     echo "<th> Component Code      </th>";
     echo "<th> Status              </th>";
+    echo "<th>  Actions     </th>";
     echo " </tr> ";
     foreach($allsensors as $res){
         for ($j = 0; $j < count($res); $j++) { 
@@ -204,6 +205,7 @@
     echo "<th> Component Name      </th>";
     echo "<th> Component Code      </th>";
     echo "<th> Status              </th>";
+    echo "<th>  Actions     </th>";
     echo " </tr> ";
     foreach($allactuators as $res){
         for ($j = 0; $j < count($res); $j++) { 
@@ -214,6 +216,22 @@
             echo "<td> " . $res[$j]['compcode'] . " </td>";
             echo "<td> " . $res[$j]['stat'] . " </td>";
             echo "</tr>";
+            $statement=$dataB->prepare("SELECT permtypeid FROM UserPermissions WHERE sysid=? AND userid=?");
+            $statement->execute(array($row[9],$_SESSION['userid']));
+            $userPerm=$statement->fetchColumn();
+            if($userPerm==3){
+                echo "  <td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/edit_device.php?id=" . $row[0] . "&sysid=".$row[9]. "'>Edit</a>";
+                echo "  <a class='btn' href='http://" . $RESOURCEPATH ."/devices/delete_device.php?id=" . $row[0] . "&sysid=".$row[9].  "'>Delete</a>";
+                echo "  <a class='btn' href='http://" . $RESOURCEPATH ."/devices/details_device.php?id=" . $row[0] . "'>Info</a></td>";
+            }
+            if($userPerm==2){
+                echo "  <td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/details_device.php?id=" . $row[0] . "'>Info</a></td>";
+            }
+            if($userPerm==1){
+                echo "  <td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/edit_device.php?id=" . $row[0] . "&sysid=".$row[9]. "'>Edit</a>";
+                echo "  <a class='btn' href='http://" . $RESOURCEPATH ."/devices/details_device.php?id=" . $row[0] . "'>Info</a>";
+        
+            }
         }
     }
     echo "</tr>";
