@@ -80,7 +80,7 @@ It is recommended to do this process locally in your machine.
 
 ![Devices Page](./docs/screenshots/devices.png)
 
-![Devices Info Page](./docs/screenshots/devicesinfo.png)
+![Devices Info Page](./docs/screenshots/deviceinfo.png)
 
 ![Systems Page](./docs/screenshots/systems.png)
 
