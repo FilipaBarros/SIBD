@@ -38,8 +38,8 @@ foreach ($res as $row) {
     echo "<td>".$row['swartefact'] . " </td>";
     echo "<td>".$row['ip'] . " </td>";
     echo "<td>".$row['stat'] . " </td>";
-    echo "<td><a href='/SIBD/locations/locations.php'>".$row['locid'] . "</td>";
-    echo "<td><a href='/SIBD/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
+    echo "<td><a class='prettylink' href='/SIBD/locations/locations.php'>".$row['locid'] . "</td>";
+    echo "<td><a class='prettylink' href='/SIBD/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
     //echo "<td>".$row['sysid'] . " </td>";
     //for ($j = 0; $j < 10; $j++) { // we're expecting 10 attributes
     //  echo "<td> " . $row[$j] . " </td>"; // gives the current item of the current attribute

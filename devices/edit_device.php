@@ -23,7 +23,7 @@
         $res = get_table($id)[0];
         //print_r($res);
         ?>
-        <div class="forms">
+        <div class="box forms">
             <form action="actions/action_edit_device.php?id=<?php echo $_GET["id"]?>" method="post">
                 <p>Name: <input type="text" name="deviceName" placeholder="Device Name" value="<?php echo $res['devname']?>" required></p>
                 <p>Manufacturer: <input type="text" name="manufacturer" placeholder="Manufacturer" value="<?php echo $res['manufacturer']?>" required></p>

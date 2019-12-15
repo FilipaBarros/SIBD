@@ -17,7 +17,7 @@
             }
 
         ?>
-        <div class="forms">
+        <div class="box forms">
             <form action="actions/action_change_permissions.php" method="post">
             <p>Change to: <select name="permission" required>
                 <?php

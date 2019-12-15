@@ -7,22 +7,21 @@
 
 @font-face {
     font-family: "fontawesome";
-    src: url("fontawesome.woff");
-}
-
-
-
-h1, h2, h3{
-    color: #82716e;
-    padding-top: 15px;
+    src: url("fontawesome-solid.woff");
 }
 
 body {
     font-size: 100%; 
     line-height: 1.5;
     font-family: Sans-Serif;
-    background-color: #e4decd;
+    background-color: #f4f3ef;
 }
+
+h1, h2, h3{
+    color: #3d3d3d;
+    padding-top: 15px;
+}
+
 h1, h2, h3, h4 {
     margin: 0; 
     line-height: 1.25
@@ -38,13 +37,16 @@ h3 {
 }
 
 .btn {
-    border: 2px solid #acb7ae;
+    border-radius: 3px;
+    text-transform: uppercase;
     padding: 2px;
     margin: 3px;
     text-align: center;
     text-decoration: none;
     width: 100px;
-    color: #82716e;
+    border: 2px solid #51bcdae8;
+    background-color:#51bcdae8;
+    color:#f4f3ef;
 }
 
 .btn-lg{
@@ -57,18 +59,24 @@ h3 {
     width: 100%;
 }
 
+.btn-full-form {
+    box-sizing: border-box;
+    font-size: 15px;
+    display: block;
+}
+
 .btn:hover{
-    background: #acb7ae;
-    color: #82716e;
+    background: #f4f3ef;
+    border: 2px solid #51bcdae8;
+    color: #302121;
     cursor: pointer;
 }
 
 .main {
     margin-top: 0px;
     padding-top: 0px;
-    margin-left: 200px; /* Account for sidebar */
+    padding-left: 200px; /* Account for sidebar */
     margin-right: 80px; /*looks nicer this way*/
-    padding: 0px 10px;
 }
 
 
@@ -77,10 +85,11 @@ h3 {
 .navbar {
     margin-top: 0px;
     list-style-type: none;
-    background-color: #acb7ae;
+    background-color: #212120;
+    box-shadow: rgba(127, 140, 141, 0.4) 0 0 4px 4px;
     height: 100%; /* Total Height */
     position: fixed; /* Make it stick*/
-    color: #82716e;
+    color: #ef8157;
     font-size: 20px;
     text-align: center;
     width: 180px; /*only way I could find of fixing it*/
@@ -91,41 +100,41 @@ h3 {
 }
 
 .a-dashboard:before {
-    font-size: 45px;
+    font-size: 35px;
     content: "\f080";
 	font-family: fontawesome;
 }
 
 .a-account:before {
-    font-size: 45px;
+    font-size: 35px;
     content: "\f007";
 	font-family: fontawesome;
 }
 
 .a-locations:before {
-    font-size: 45px;
+    font-size: 35px;
     content: "\f14e";
 	font-family: fontawesome;
 }
 
 .a-devices:before {
-    font-size: 45px;
+    font-size: 35px;
     content: "\f0a0";
 	font-family: fontawesome;
 }
 .a-systems:before {
-    font-size: 45px;
+    font-size: 35px;
     content: "\f247";
 	font-family: fontawesome;
 }
 .a-users:before{
-    font-size: 45px;
+    font-size: 35px;
     content: "\f2b9";
 	font-family: fontawesome;
 }
 
 .a-logout:before{
-    font-size: 45px;
+    font-size: 35px;
     content: "\f057";
 	font-family: fontawesome;
 }
@@ -138,18 +147,22 @@ h3 {
 .navbar li{
     padding: 15px;
     font-size: 20px;
-    color: #82716e;
+    color: #e9906cbd;
     display: block;
 }
 
-.navbar a{
-    color: #82716e;
+.navbar h3 {
+    color: #c85a2f;
+}
+
+.navbar a {
+    color: #e9906cbd;
     display: block;
     line-height: 25px;
 }
 
 .navbar a:hover{
-    color: #c09b5f  ;
+    color: #c85a2f;
 }
 
 
@@ -169,8 +182,9 @@ h3 {
 }  
 
 .box {
-    background-color: #acb7ae;
-    border-radius: 5px;
+    background-color: #ffff;
+    box-shadow: rgba(0,0,0,0.3) 0 8px 12px -5px;
+    border-radius: 8px;
     margin: 10px;
     padding: 20px;
     font-size: 125%;
@@ -178,8 +192,9 @@ h3 {
 }
 
 .box h1 {
-    color: #c09b5f  ;
+    color: #ef8157;
 }
+
 .graph {
     grid-column: span 2;
 }
@@ -196,10 +211,11 @@ table {
 }
 
 th {
-    background-color: #acb7ae;
-    color: #82716e;
+    background-color: #ef8157;
+    color:#f4f3ef;
     padding: 8px;
     text-align: left;
+    border-bottom: 1px solid #ebeef5;    
 }
 
 td {
@@ -208,21 +224,32 @@ td {
 
 tr{
     padding: 8px;
-    height: 85px;
+    height: 80px;
     text-align: left;
+    border-bottom: 2px solid #ebeef5;
 }
 
 tr:nth-child(even){
-    background-color: #cbb692  ;
+    background-color: #e3e3e3;
 }
 
-table a{
+tr:hover {
+    background-color: #f5f7fa
+}
+
+
+table a {
     padding: 10px;
     font-size: 15px;
-    color: #82716e;
+    color: #0989ad;
     display: block;
+    text-decoration: none;
 }
 
+.prettylink:before {
+    content: "\f0c1\00a0";
+	font-family: fontawesome;
+}
 
 /*index page*/
 
@@ -242,20 +269,22 @@ table a{
 /*forms!*/
 
 .forms{
-	max-width: 500px;
+	max-width: 100%;
 	padding: 10px 20px;
-	background: #acb7ae  ;
     margin: 10px;
 	padding: 20px;
-    border-radius: 5px;
-    line-height: 2.5;
-    color: #82716e;
+    color: #9a9a9a;
     text-align: left;
     text-justify: inter-word;
     border: none;
+    line-height: 22px;
 }
+
+.forms p {
+    font-size: .86em;
+}
+
 input {
-    background: rgba(255,255,255,.1);
 	border: none;
 	border-radius: 4px;
 	font-size: 15px;
@@ -263,16 +292,15 @@ input {
 	outline: 0;
 	padding: 10px;
 	width: 100%;
-	box-sizing: border-box; 
-	background-color: #d5dbd6 ;
-	color:#82716e;
-	box-shadow: 0 1px 0 #82716e inset;
+	box-sizing: border-box;
+    columns: #3d3d3d;
+    background-color:#fff;
+    color: #3d3d3d;
+    border: 1px solid #3d3d3d;
 	margin-bottom: 30px;
 }
 
-select{
-    font-family: Georgia, "Times New Roman", Times, serif;
-	background: rgba(255,255,255,.1);
+select {
 	border: none;
 	border-radius: 4px;
 	font-size: 15px;
@@ -281,8 +309,8 @@ select{
 	padding: 10px;
 	width: 100%;
 	box-sizing: border-box; 
-	background-color: #e8eeef;
-	color:#82716e;
+    background-color:#fff;
+    border: 1px solid#3d3d3d;
 	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	margin-bottom: 30px;
 }
@@ -297,7 +325,7 @@ select{
 
 
 
-/*color palete: Barely Green: #acb7ae
+/*color palete: Barely Green: #f4f3ef
 
 lighter green: #d5dbd6 
 

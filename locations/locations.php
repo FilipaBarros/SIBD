@@ -17,27 +17,6 @@
 <br>
 <table>
 <?php
-$res = get_table();
-echo "<br>";
-echo "<a class='btn btn-lg' href='create_location.php'>Add Location</a>";
-echo "<br>";
-echo "<br>";
-echo " <tr> ";
-echo "<th> # </th>";
-echo "<th> Country </th>";
-echo "<th> City </th>";
-echo "<th> Zip </th>";
-echo "<th> Street </th>";
-echo "<th> Building </th>";
-echo "<th> Floor </th>";
-echo "<th> Room </th>";
-echo "<th> Actions </th>";
-echo " </tr> ";
-foreach ($res as $row) {
-    echo "<tr>";
-    for ($j = 0; $j < 8; $j++) { // we're expecting eight attributes
-        echo "<td> " . $row[$j] . " </td>"; // gives the current item of the current attribute
-    }
     global $dataB;
     $statement=$dataB->prepare("SELECT permtypeid FROM UserPermissions WHERE userid=?");
     $statement->execute(array($_SESSION['userid']));
@@ -48,6 +27,30 @@ foreach ($res as $row) {
         if($tryPls[0]==3){
             $check=1;
         }
+    }
+
+
+$res = get_table();
+echo "<br>";
+echo "<a class='btn btn-lg' href='create_location.php'>Add Location</a>";
+echo " <tr> ";
+echo "<th> # </th>";
+echo "<th> Country </th>";
+echo "<th> City </th>";
+echo "<th> Zip </th>";
+echo "<th> Street </th>";
+echo "<th> Building </th>";
+echo "<th> Floor </th>";
+echo "<th> Room </th>";
+if($check==1){
+    echo "<th> Actions </th>";
+}
+
+echo " </tr> ";
+foreach ($res as $row) {
+    echo "<tr>";
+    for ($j = 0; $j < 8; $j++) { // we're expecting eight attributes
+        echo "<td> " . $row[$j] . " </td>"; // gives the current item of the current attribute
     }
     
 

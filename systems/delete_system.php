@@ -17,13 +17,14 @@ $dev_details = $statement->fetchAll()[0];
 //print_r($dev_details);
 ?>
 
-<h2>
-You are going to delete the system with ID: <?php echo $dev_details["sysid"] ?> - System Description: <?php echo $dev_details["sysdescription"] ?> 
-</h2>
-<br>
-<br>
-<a class='btn btn-lg' href="actions/action_delete_system.php?id=<?php echo $dev_details["sysid"] ?>">Delete</a>
-<a class='btn btn-lg' href="systems.php">Go Back</a>
-
+<div class="box">
+    <h3>
+     Are you sure you wish to delete the system with ID: <?php echo $dev_details["sysid"] ?> and description: <?php echo $dev_details["sysdescription"] ?> ?
+    </h3>
+    <br>
+    <br>
+    <a class='btn btn-lg' href="actions/action_delete_system.php?id=<?php echo $dev_details["sysid"] ?>">Delete</a>
+    <a class='btn btn-lg' href="systems.php">Go Back</a>
+</div>
 
 <?php include('../partials/footer.php'); ?> 

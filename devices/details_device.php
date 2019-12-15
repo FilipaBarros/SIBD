@@ -98,8 +98,8 @@
         echo "<td>".$row['swartefact'] . " </td>";
         echo "<td>".$row['ip'] . " </td>";
         echo "<td>".$row['stat'] . " </td>";
-        echo "<td><a href='/SIBD/locations/locations.php'>".$row['locid'] . "</td>";
-        echo "<td><a href='/SIBD/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
+        echo "<td><a class='prettylink' href='/SIBD/locations/locations.php'>".$row['locid'] . "</td>";
+        echo "<td><a class='prettylink' href='/SIBD/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
         //echo "<tr>";
         //for ($j = 0; $j < 10; $j++) { // we're expecting 10 attributes
         //    echo "<td> " . $row[$j] . " </td>"; // gives the current item of the current attribute
@@ -139,14 +139,17 @@
         array_push($allactuators, get_table_actuators($compcode));
         array_push($allsensors, get_table_sensors($compcode));
     }
-    //sensors
-    //print_r($allsensors);
-    echo "<br>";
-    echo "<h4>Sensors</h4>";
-    echo "<br>";
+?>
+<br>
+<h4>Sensors</h4>
+<br>
+<?php
     echo "<a class='btn btn-lg' href='create_sensor.php?id=".$device_id."'>Add Sensor</a>";
     echo "<br>";
     echo "<br>";
+    if(count($allsensors) > 0){
+    //sensors
+    //print_r($allsensors);
     echo "<table>";
     echo "<tr>";
     echo "<th> #                   </th>";
@@ -170,15 +173,18 @@
     }
     echo "</tr>";
     echo "</table>";
-    
+    }
+?>
+<br>
+<h4>Actuators</h4>
+<br>
+<?php
     //actuators
     //print_r($allactuators);
-    echo "<br>";
-    echo "<h4>Actuators</h4>";
-    echo "<br>";
     echo "<a class='btn btn-lg' href='create_actuator.php?id=".$device_id."'>Add Actuator</a>";
     echo "<br>";
     echo "<br>";
+    if(count($allactuators) > 0){
     echo "<table>";
     echo "<tr>";
     echo "<th> #                   </th>";
@@ -200,10 +206,13 @@
     }
     echo "</tr>";
     echo "</table>";
-    //systems 
+    }
+?>
+<h3>Systems</h3>
+<?php
+//systems 
     $res3 = get_table_systems($device_id);
     //print_r($res3);
-    echo "<h3>Systems</h3>";
     echo "<table>";
     echo " <tr> ";
     echo "<th> #                  </th>";

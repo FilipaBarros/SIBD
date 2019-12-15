@@ -23,7 +23,7 @@
         $res = get_table($id)[0];
         //print_r($res);
         ?>
-        <div class="forms">
+        <div class="box forms">
             <form action="actions/action_edit_system.php?id=<?php echo $_GET["id"]?>" method="post">
                 <p>Category: <input type="text" name="category" placeholder="category" value="<?php echo $res['category']?>" required></p>
                 <p>Functions: <input type="text" name="functions" placeholder="functions" value="<?php echo $res['functions']?>" required></p>

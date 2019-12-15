@@ -25,7 +25,7 @@
         $title = "Create Device";
         echo "<h2>" . $title . "</h2>";
         ?>
-        <div class="forms">
+        <div class="box forms">
             <form action="actions/action_create_device.php" method="post">
                 <p>Name: <input type="text" name="deviceName" placeholder="Device Name" required></p>
                 <p>Manufacturer: <input type="text" name="manufacturer" placeholder="Manufacturer" required></p>

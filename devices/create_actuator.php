@@ -20,16 +20,16 @@
         echo "<h2>" . $title . "</h2>";
         $id=$_GET['id']
     ?>
-    <div class="forms">
+    <div class="box forms">
         <form action="actions/action_create_actuator.php" method="post">
             <p>Name: <input type="text" name="actuatorName" placeholder="Actuator Name" required></p>
             <p>Code: <input type="number" name="actuatorCode" placeholder="Actuator Code" required></p>
             <p>Status: <input type="text" name="actuatorStatus" placeholder="Actuator Status" required></p>
             <p>Function: <input type="text" name="function" placeholder="Function" required></p>
             <input type="hidden" name="id" value="<?=$id?>">
-            <input type="submit" value="Create">
+            <input class="btn btn-full"type="submit" value="Create">
+            <a class="btn btn-full btn-full-form" href="associate_category.php?id=<?=$id?>">Continue</a>
         </form>
-        <a class="btn btn-lg" href="associate_category.php?id=<?=$id?>"><button type="button">Continue</button></a>
     </div>
 </section>
 
