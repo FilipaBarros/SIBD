@@ -21,12 +21,12 @@
         $queryLocal="SELECT catid,catname FROM Categories";
         $result = $dataB->query($queryLocal);
         while ($row = $result->fetch()){
-            echo '<a href="actions/action_associate_category.php?category='.$row['catid'].'&id='.$id.'"><p>'.$row['catname'].'</p></a>';
+            echo '<a href="http://'.$RESOURCEPATH .'/actions/action_associate_category.php?category='.$row['catid'].'&id='.$id.'"><p>'.$row['catname'].'</p></a>';
         }
     ?>
 
 </section>
-<a class='btn' href="devices.php"><button type="button">Finish</button></a>
+<a class='btn' href="http://<?php echo $RESOURCEPATH ?>/devices/devices.php"><button type="button">Finish</button></a>
 
 <?php 
 } 

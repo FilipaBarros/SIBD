@@ -38,12 +38,12 @@
             print_r($row);
             $_SESSION['systems'][$row["sysid"]] = $row["permtypedescription"];
         }
-        header('Location: ../../welcome_page.php?user='.$username);
+        header('Location: http://'.$RESOURCEPATH.'/users/welcome_page.php?user='.$username);
         //exit();
     }
     else{
         $_SESSION['wrongCombination']="Username/Password Combination Incorrect";
-        header('Location: ../../index.php');
+        header('Location: http://'.$RESOURCEPATH.'/index.php');
         exit();
     }
     

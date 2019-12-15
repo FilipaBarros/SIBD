@@ -33,7 +33,7 @@
 $res = get_table();
 ?>
 <br>
-<a class='btn btn-lg' href='create_location.php'>Add Location</a>
+<a class='btn btn-lg' href='http://" <?php echo $RESOURCEPATH ?>"/locations/create_location.php'>Add Location</a>
 <br>
 <br>
 <?php
@@ -59,7 +59,7 @@ foreach ($res as $row) {
     
 
     if($check==1){
-        echo " <td><a class='btn' href='edit_location.php?id=" . $row[0] . "'>Edit</a>";
+        echo " <td><a class='btn' href='http://" . $RESOURCEPATH ."/locations/edit_location.php?id=" . $row[0] . "'>Edit</a>";
     }
      echo "<br>";
     echo "</tr>";

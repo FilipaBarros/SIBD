@@ -13,12 +13,12 @@ function get_table()
 <br>
 <br>
 <table>
+<br>
+<a class='btn btn-lg' href='http://<?php echo $RESOURCEPATH ?>/systems/create_system.php'>Add System</a>
+<br>
+<br>
 <?php
 $res = get_table();
-echo "<br>";
-echo "<a class='btn btn-lg' href='create_system.php'>Add System</a>";
-echo "<br>";
-echo "<br>";
 echo " <tr> ";
 echo "<th> # </th>";
 echo "<th> Category </th>";

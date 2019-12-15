@@ -38,8 +38,8 @@ foreach ($res as $row) {
     echo "<td>".$row['swartefact'] . " </td>";
     echo "<td>".$row['ip'] . " </td>";
     echo "<td>".$row['stat'] . " </td>";
-    echo "<td><a class='prettylink' href='/SIBD/locations/locations.php'>".$row['locid'] . "</td>";
-    echo "<td><a class='prettylink' href='/SIBD/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
+    echo "<td><a class='prettylink' href='http://".$RESOURCEPATH."/locations/locations.php'>".$row['locid'] . "</td>";
+    echo "<td><a class='prettylink' href='http://".$RESOURCEPATH."/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
     //echo "<td>".$row['sysid'] . " </td>";
     //for ($j = 0; $j < 10; $j++) { // we're expecting 10 attributes
     //  echo "<td> " . $row[$j] . " </td>"; // gives the current item of the current attribute
@@ -48,16 +48,16 @@ foreach ($res as $row) {
     $statement->execute(array($row[9],$_SESSION['userid']));
     $userPerm=$statement->fetchColumn();
     if($userPerm==3){
-        echo "  <td><a class='btn' href='edit_device.php?id=" . $row[0] . "&sysid=".$row[9]. "'>Edit</a>";
-        echo "  <a class='btn' href='delete_device.php?id=" . $row[0] . "&sysid=".$row[9].  "'>Delete</a>";
-        echo "  <a class='btn' href='details_device.php?id=" . $row[0] . "'>Info</a></td>";
+        echo "  <td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/edit_device.php?id=" . $row[0] . "&sysid=".$row[9]. "'>Edit</a>";
+        echo "  <a class='btn' href='http://" . $RESOURCEPATH ."/devices/delete_device.php?id=" . $row[0] . "&sysid=".$row[9].  "'>Delete</a>";
+        echo "  <a class='btn' href='http://" . $RESOURCEPATH ."/devices/details_device.php?id=" . $row[0] . "'>Info</a></td>";
     }
     if($userPerm==2){
-        echo "  <td><a class='btn' href='details_device.php?id=" . $row[0] . "'>Info</a></td>";
+        echo "  <td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/details_device.php?id=" . $row[0] . "'>Info</a></td>";
     }
     if($userPerm==1){
-        echo "  <td><a class='btn' href='edit_device.php?id=" . $row[0] . "&sysid=".$row[9]. "'>Edit</a>";
-        echo "  <a class='btn' href='details_device.php?id=" . $row[0] . "'>Info</a>";
+        echo "  <td><a class='btn' href='http://" . $RESOURCEPATH ."/devices/edit_device.php?id=" . $row[0] . "&sysid=".$row[9]. "'>Edit</a>";
+        echo "  <a class='btn' href='http://" . $RESOURCEPATH ."/devices/details_device.php?id=" . $row[0] . "'>Info</a>";
 
     }
     echo "</tr>";

@@ -11,5 +11,5 @@
     $statement = $dataB->prepare('UPDATE Systems SET category =?, functions=?, sysdescription=? WHERE sysid=?');
     $statement->execute(array($category,$functions,$sysdescription,$id));
   
-    header('Location: ../systems.php');
+    header('Location: http://'.$RESOURCEPATH.'/systems/systems.php');
 ?>

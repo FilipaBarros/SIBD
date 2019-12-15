@@ -19,10 +19,10 @@
         $statement->execute(array($username,sha1($pass),$contact,$id));
     }
     else{
-        header('Location: ../edit_profile.php');
+        header('Location: http://'.$RESOURCEPATH.'/users/edit_profile.php');
     }
 
-    header('Location: ../edit_profile.php');
+    header('Location: http://'.$RESOURCEPATH.'/users/edit_profile.php');
 
 
 ?>

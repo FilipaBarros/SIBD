@@ -10,7 +10,7 @@
         $statement->execute(array($sysid,$_SESSION['userid']));
         $userPerm= $statement->fetchColumn();
         if($userPerm!=3 && $userPerm!=1){
-           header('Location: ../partials/500.php');
+            header('Location: http://'.$RESOURCEPATH.'/partials/500.php');
         }
         function get_table($id)
         {

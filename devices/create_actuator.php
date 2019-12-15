@@ -28,7 +28,7 @@
             <p>Function: <input type="text" name="function" placeholder="Function" required></p>
             <input type="hidden" name="id" value="<?=$id?>">
             <input class="btn btn-full"type="submit" value="Create">
-            <a class="btn btn-full btn-full-form" href="associate_category.php?id=<?=$id?>">Continue</a>
+            <a class="btn btn-full btn-full-form" href="http://<?php echo $RESOURCEPATH ?>/devices/associate_category.php?id=<?=$id?>">Continue</a>
         </form>
     </div>
 </section>

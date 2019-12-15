@@ -9,7 +9,7 @@ $statement->execute(array($id,$_SESSION['userid']));
 $userPerm= $statement->fetchColumn();
 
 if($userPerm!=3){
-    header('Location: ../partials/500.php');
+    header('Location: http://'.$RESOURCEPATH.'/partials/500.php');
 }
 $statement = $dataB->prepare("SELECT * FROM Systems WHERE sysid = ?");
 $statement->execute(array($id));
@@ -23,8 +23,8 @@ $dev_details = $statement->fetchAll()[0];
     </h3>
     <br>
     <br>
-    <a class='btn btn-lg' href="actions/action_delete_system.php?id=<?php echo $dev_details["sysid"] ?>">Delete</a>
-    <a class='btn btn-lg' href="systems.php">Go Back</a>
+    <a class='btn btn-lg' href="http://<?php echo $RESOURCEPATH ?>/systems/actions/action_delete_system.php?id=<?php echo $dev_details["sysid"] ?>">Delete</a>
+    <a class='btn btn-lg' href="http://<?php echo $RESOURCEPATH ?>/systems/systems.php">Go Back</a>
 </div>
 
 <?php include('../partials/footer.php'); ?> 

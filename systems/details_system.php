@@ -48,7 +48,7 @@
     echo "</tr> ";
     foreach ($res as $row) {
         echo "<tr>";
-        echo "<td><a class='prettylink' href='/SIBD/devices/details_device.php'>".$row['devid'] . "</td>";
+        echo "<td><a class='prettylink' href='http://". $RESOURCEPATH ."/devices/details_device.php'>".$row['devid'] . "</td>";
         //echo "<td>".$row['devid'] . " </td>";
         echo "<td>".$row['devname'] . " </td>";
         echo "<td>".$row['manufacturer'] . " </td>";
@@ -57,8 +57,8 @@
         echo "<td>".$row['swartefact'] . " </td>";
         echo "<td>".$row['ip'] . " </td>";
         echo "<td>".$row['stat'] . " </td>";
-        echo "<td><a class='prettylink' href='/SIBD/locations/locations.php'>".$row['locid'] . "</td>";
-        echo "<td><a class='prettylink' href='/SIBD/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
+        echo "<td><a class='prettylink' href='http://". $RESOURCEPATH ."/locations/locations.php'>".$row['locid'] . "</td>";
+        echo "<td><a class='prettylink' href='http://". $RESOURCEPATH ."/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
         //devid, devname, manufacturer, devdescription, swversion, swartefact, ip, stat, locid, sysid
         echo "</tr>";
     }

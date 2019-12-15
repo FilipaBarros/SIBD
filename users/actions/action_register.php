@@ -25,12 +25,12 @@
             $statement=$dataB->prepare('INSERT INTO UserPermissions(userid,sysid,permtypeid) VALUES (?,?,2)');
             $statement->execute(array($newUserID,$row[0]));
         }
-        header('Location: ../../index.php');
+        header('Location: http://'.$RESOURCEPATH.'/index.php');
 
     }
     if($check>0){
         $_SESSION['usernameError']="Username Taken!";
-        header('Location: ../../index.php');
+        header('Location: http://'.$RESOURCEPATH.'/index.php');
             
     }
 

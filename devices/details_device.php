@@ -98,8 +98,8 @@
         echo "<td>".$row['swartefact'] . " </td>";
         echo "<td>".$row['ip'] . " </td>";
         echo "<td>".$row['stat'] . " </td>";
-        echo "<td><a class='prettylink' href='/SIBD/locations/locations.php'>".$row['locid'] . "</td>";
-        echo "<td><a class='prettylink' href='/SIBD/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
+        echo "<td><a class='prettylink' href='".$SERVERPATH."/locations/locations.php'>".$row['locid'] . "</td>";
+        echo "<td><a class='prettylink' href='".$SERVERPATH."/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
         //echo "<tr>";
         //for ($j = 0; $j < 10; $j++) { // we're expecting 10 attributes
         //    echo "<td> " . $row[$j] . " </td>"; // gives the current item of the current attribute
@@ -144,7 +144,7 @@
 <h4>Sensors</h4>
 <br>
 <?php
-    echo "<a class='btn btn-lg' href='create_sensor.php?id=".$device_id."'>Add Sensor</a>";
+    echo "<a class='btn btn-lg' href='http://" . $RESOURCEPATH ."/devices/create_sensor.php?id=".$device_id."'>Add Sensor</a>";
     echo "<br>";
     echo "<br>";
     if(count($allsensors) > 0){
@@ -181,7 +181,7 @@
 <?php
     //actuators
     //print_r($allactuators);
-    echo "<a class='btn btn-lg' href='create_actuator.php?id=".$device_id."'>Add Actuator</a>";
+    echo "<a class='btn btn-lg' href='". $RESOURCEPATH. "/devices/create_actuator.php?id=".$device_id."'>Add Actuator</a>";
     echo "<br>";
     echo "<br>";
     if(count($allactuators) > 0){

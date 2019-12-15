@@ -20,7 +20,7 @@
           $statement->execute(array($_GET['id'],$_SESSION['userid']));
           $userPerm= $statement->fetchColumn();
           if($userPerm!=3){
-              header('Location: ../partials/500.php');
+                header('Location: http://'.$RESOURCEPATH.'/partials/500.php');
           }
         $title = "Create Device";
         echo "<h2>" . $title . "</h2>";

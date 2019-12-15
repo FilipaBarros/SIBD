@@ -24,7 +24,7 @@
     $statement = $dataB->prepare('UPDATE UserPermissions SET permtypeid=? WHERE userid=?');
     $statement->execute(array(3,$_SESSION['userid']));
    
-    header('Location: ../systems.php');
+    header('Location: http://'.$RESOURCEPATH.'/systems/systems.php');
     
    // catch(PDOException $e){
    //     header('Location: register_page.php');

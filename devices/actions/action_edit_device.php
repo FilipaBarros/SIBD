@@ -16,5 +16,5 @@
     $statement = $dataB->prepare('UPDATE Devices SET devname =?, manufacturer=?, devdescription=?, swversion=?, swartefact=?, ip=?, stat=?, locid=? WHERE devid=?');
     $statement->execute(array($deviceName,$manufacturer,$description,$swversion,$swartefact,$ip,$status,$local,$id));
   
-    header('Location: ../devices.php');
+    header('Location: http://'.$RESOURCEPATH.'/devices/devices.php');
 ?>

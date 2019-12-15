@@ -1,6 +1,6 @@
 <?php include ('./partials/header.php') ?>  
 <?php if (isset($_SESSION['username'])) {
-    header("Location: welcome_page.php");
+    header("Location: users/welcome_page.php");
 }
 ?>
 <h2 class="maintitle">Device Lookup Service</h2>

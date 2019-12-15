@@ -1,4 +1,4 @@
-<?php include ('partials/header.php') ?>
+<?php include ('../partials/header.php') ?>
 
     
 <h2>Dashboard</h2>
@@ -106,7 +106,7 @@
     
 </div>
 
-<?php include ('partials/footer.php') ?>
+<?php include ('../partials/footer.php') ?>
 
 
 <!-- TODO: 1. tabela com categorias de todos os devices que existem      -->

@@ -11,7 +11,7 @@
     $userPerm= $statement->fetchColumn();
 
     if($userPerm!=3){
-        header('Location: ../partials/500.php');
+        header('Location: http://'.$RESOURCEPATH.'/partials/500.php');
     }
     $statement = $dataB->prepare("SELECT * FROM Devices WHERE devid = ?");
     $statement->execute(array($id));
@@ -24,8 +24,8 @@
     </h3>
     <br>
 
-    <a class="btn btn-lg" href="actions/action_delete_device.php?id=<?php echo $dev_details["devid"] ?>">Delete</a>
-    <a class="btn btn-lg" href="devices.php">Go Back</a>
+    <a class="btn btn-lg" href="http://<?php echo $RESOURCEPATH ?>/devices/actions/action_delete_device.php?id=<?php echo $dev_details["devid"] ?>">Delete</a>
+    <a class="btn btn-lg" href="http://<?php echo $RESOURCEPATH ?>/devices/devices.php">Go Back</a>
 </div>
 
 

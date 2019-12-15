@@ -10,7 +10,7 @@
     $statement->execute(array($devId,$category));
     print_r($statement);
 
-    header('Location: ../associate_category.php?id='.$devId);
+    header('Location: http://'.$RESOURCEPATH.'/devices/associate_category.php?id='.$devId);
 
 
 

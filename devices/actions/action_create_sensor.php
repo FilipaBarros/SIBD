@@ -24,6 +24,6 @@
     $statement->execute(array($units,$periodicity,$name,$code,$status));
     print_r($statement);
 
-    header('Location: ../create_sensor.php?id='.$devId);
+    header('Location: http://'.$RESOURCEPATH.'/devices/create_sensor.php?id='.$devId);
 
 ?>

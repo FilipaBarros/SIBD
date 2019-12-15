@@ -17,7 +17,7 @@
     }
 
     newLocal($country, $city, $zip, $street, $building, $floor, $room);
-    header('Location: ../locations.php');
+    header('Location: http://'.$RESOURCEPATH.'/locations/locations.php');
     
    // catch(PDOException $e){
    //     header('Location: register_page.php');

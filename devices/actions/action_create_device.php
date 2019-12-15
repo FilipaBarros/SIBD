@@ -16,7 +16,7 @@
     $statement->execute(array($deviceName,$manufacturer,$description,$swversion,$swartefact,$ip,$status,$local,$sysId));
     print_r($statement);
 
-    header('Location: ../create_sensor.php?id='.$dataB->lastInsertId());
+    header('Location: http://'.$RESOURCEPATH.'/devices/create_sensor.php?id='.$dataB->lastInsertId());
     
    
 

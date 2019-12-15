@@ -32,7 +32,7 @@
                 echo "<th> Permission </th>";
                 echo "</tr>";
                 foreach($permissions as $row){
-                    echo "<tr><td><a class='prettylink' href='/SIBD/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
+                    echo "<tr><td><a class='prettylink' href='". $SERVERPATH ."/systems/details_system.php?id=".$row['sysid'] . "'>".$row['sysid'] . "</a></td>";
                     //echo "<tr><td>".$row['sysid']."</td>";
                     echo "<td>".$row['permtypedescription']."</td></tr>";
                 }

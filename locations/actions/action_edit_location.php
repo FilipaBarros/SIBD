@@ -14,5 +14,5 @@
     $statement = $dataB->prepare('UPDATE Locals SET country =?, city=?, zip=?, street=?, building=?, floordesc=?, room=? WHERE locid=?');
     $statement->execute(array($country,$city,$zip,$street,$building,$floordesc,$room,$id));
   
-    header('Location: ../locations.php');
+    header('Location: http://'.$RESOURCEPATH.'/locations/locations.php');
 ?>

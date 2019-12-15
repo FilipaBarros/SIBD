@@ -10,7 +10,7 @@
     $statement->execute(array($permission,$userId,$sysId));
     print_r($statement);
 
-    header('Location: ../users.php');
+    header('Location: http://'.$RESOURCEPATH.'/users/users.php');
 
 
 ?>

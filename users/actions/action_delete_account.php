@@ -13,10 +13,10 @@
         $statement2=$dataB->prepare("DELETE FROM Users WHERE userid=?");
         $statement2->execute(array($_SESSION['userid']));
         session_destroy();
-        header('Location: ../../index.php');
+        header('Location: http://'.$RESOURCEPATH.'/index.php');
      }
      else{
-        header('Location: ../delete_account.php');
+        header('Location: http://'.$RESOURCEPATH.'/users/delete_account.php');
      }
 
 ?>

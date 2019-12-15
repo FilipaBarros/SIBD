@@ -28,7 +28,7 @@
             <p>Periodicity(s): <input type="number" name="sensorPeriodicity" placeholder="Seconds" required></p>
             <input type="hidden" name="id" value="<?=$id?>">
             <input class="btn btn-full" type="submit" value="Create"><br>     
-            <a class="btn btn-full btn-full-form" href="create_actuator.php?id=<?=$id?>">Continue</a>
+            <a class="btn btn-full btn-full-form" href="http://<?php echo $RESOURCEPATH ?>/devices/create_actuator.php?id=<?=$id?>">Continue</a>
         </form>
         </div>
     </div>

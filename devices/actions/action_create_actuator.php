@@ -23,6 +23,6 @@
     $statement->execute(array($func,$name,$code,$status));
     print_r($statement);
 
-    header('Location: ../create_actuator.php?id='.$devId);
+    header('Location: http://'.$RESOURCEPATH.'/devices/create_actuator.php?id='.$devId);
 
 ?>
