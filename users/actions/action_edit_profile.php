@@ -15,8 +15,13 @@
     print_r($statement);
 
     if($row['num']==0){
-        $statement = $dataB->prepare('UPDATE Users SET username=?, passphrase=?, contact=? WHERE userid=?');
-        $statement->execute(array($username,sha1($pass),$contact,$id));
+        if($pass!=""){
+            $statement = $dataB->prepare('UPDATE Users SET username=?, passphrase=?, contact=? WHERE userid=?');
+            $statement->execute(array($username,sha1($pass),$contact,$id));
+        } else {
+            $statement = $dataB->prepare('UPDATE Users SET username=?, contact=? WHERE userid=?');
+            $statement->execute(array($username,$contact,$id));
+        }
     }
     else{
         header('Location: http://'.$RESOURCEPATH.'/users/edit_profile.php');

@@ -181,7 +181,7 @@
 <?php
     //actuators
     //print_r($allactuators);
-    echo "<a class='btn btn-lg' href='". $RESOURCEPATH. "/devices/create_actuator.php?id=".$device_id."'>Add Actuator</a>";
+    echo "<a class='btn btn-lg' href='http://". $RESOURCEPATH. "/devices/create_actuator.php?id=".$device_id."'>Add Actuator</a>";
     echo "<br>";
     echo "<br>";
     if(count($allactuators) > 0){

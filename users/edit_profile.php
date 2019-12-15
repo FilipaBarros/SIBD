@@ -45,7 +45,7 @@
                 <form action="actions/action_edit_profile.php" method="post">
                     <p>Username: <input type="text" name="username" placeholder="Username" value="<?php echo $res['username']?>"></p>
                     <p>Contact: <input type="email" name="contact" placeholder="Contact" value="<?php echo $res['contact']?>"></p>
-                    <p>Password: <input type="password" name="password" placeholder="Password" value="<?php echo $res['passphrase']?>"></p>
+                    <p>Password: <input type="password" name="password" placeholder="unchanged"></p>
                     <input type="hidden" name="id" value="<?=$id?>">
                     <input class="btn btn-full" type="submit" value="Update">
                     <br>

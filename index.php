@@ -10,7 +10,7 @@
         <h3>Login</h3>
         <br>
          <?php if(isset($_GET["error"])){
-            echo "<p> > Error in username or password.</p>";
+            echo "<p>Error in username or password.</p>";
         } ?>
        
         <form action="./users/actions/action_login.php" method="post">

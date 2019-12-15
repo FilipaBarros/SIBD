@@ -17,7 +17,7 @@
         $title = "Create Local";
         echo "<h2>" . $title . "</h2>";
     ?>
-    <div class="forms">
+    <div class="box forms">
         <form action="actions/action_create_location.php" method="post">
             <p>Country: <input type="text" name="country" placeholder="Country" required></p>
             <p>City: <input type="text" name="city" placeholder="City" required></p>
@@ -26,7 +26,7 @@
             <p>Building: <input type="text" name="building" placeholder="Building" required></p>
             <p>Floor: <input type="number" name="floor" placeholder="Floor" required></p>
             <p>Room: <input type="text" name="room" placeholder="Room" required></p>
-            <input type="submit" value="Create">
+            <input class="btn btn-full" type="submit" value="Create">
         </form>
     <div>
 </section> 

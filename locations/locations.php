@@ -33,7 +33,7 @@
 $res = get_table();
 ?>
 <br>
-<a class='btn btn-lg' href='http://" <?php echo $RESOURCEPATH ?>"/locations/create_location.php'>Add Location</a>
+<a class='btn btn-lg' href='http://<?php echo $RESOURCEPATH ?>/locations/create_location.php'>Add Location</a>
 <br>
 <br>
 <?php

@@ -13,7 +13,7 @@
 
 <?php
     if(!isset($_SESSION['username'])){
-        if(strpos($_SERVER['REQUEST_URI'],"/SIBD/index.php")){
+        if(!strpos($_SERVER['REQUEST_URI'],"/SIBD/index.php")){
             header("Location: http://". $RESOURCEPATH ."/index.php");
         }    
     }
