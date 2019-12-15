@@ -23,7 +23,10 @@
         <form action="actions/action_create_sensor.php" method="post">
             <p>Name: <input type="text" name="sensorName" placeholder="Sensor Name" required></p>
             <p>Code: <input type="number" name="sensorCode" placeholder="Sensor Code" required></p>
-            <p>Status: <input type="text" name="sensorStatus" placeholder="Sensor Status" required></p>
+            <p>Status: <select name="sensorStatus" required>
+                    <option value="working">Working</option>
+                    <option value="offline">Offline</option>
+            </select></p>
             <p>Units Measured: <input type="text" name="sensorUnits" placeholder="Units" required></p>
             <p>Periodicity(s): <input type="number" name="sensorPeriodicity" placeholder="Seconds" required></p>
             <input type="hidden" name="id" value="<?=$id?>">

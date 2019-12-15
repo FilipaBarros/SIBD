@@ -41,7 +41,7 @@
     </form>
     <br>
     <br>
-    <!-- <a class='btn btn-lg' href="http://<?php //echo $RESOURCEPATH ?>/devices/actions">Finish</a> -->
+    <a class='btn btn-lg' href="http://<?php echo $RESOURCEPATH ?>/devices/create_category.php?id=<?=$id?>">Create Category</a>
 </div>
 
 <?php 

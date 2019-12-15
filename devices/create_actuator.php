@@ -24,7 +24,10 @@
         <form action="actions/action_create_actuator.php" method="post">
             <p>Name: <input type="text" name="actuatorName" placeholder="Actuator Name" required></p>
             <p>Code: <input type="number" name="actuatorCode" placeholder="Actuator Code" required></p>
-            <p>Status: <input type="text" name="actuatorStatus" placeholder="Actuator Status" required></p>
+            <p>Status: <select name="actuatorStatus" required>
+                    <option value="working">Working</option>
+                    <option value="offline">Offline</option>
+            </select></p>
             <p>Function: <input type="text" name="function" placeholder="Function" required></p>
             <input type="hidden" name="id" value="<?=$id?>">
             <input class="btn btn-full"type="submit" value="Create">
