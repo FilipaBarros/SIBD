@@ -1,8 +1,8 @@
 <?php
-    if($_SERVER['CONTEXT_DOCUMENT_ROOT'])
+    if(isset($_SERVER['CONTEXT_DOCUMENT_ROOT']))
         $SERVERPATH = $_SERVER['CONTEXT_DOCUMENT_ROOT']."/SIBD";
     else
-        $SERVERPATH = "/SIBD";
+        $SERVERPATH = $_SERVER['DOCUMENT_ROOT']."/SIBD";
     require_once($SERVERPATH . '/config/init.php');    
 ?>
 <!DOCTYPE html>
