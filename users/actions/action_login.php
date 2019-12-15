@@ -1,11 +1,8 @@
 <?php
     require_once('../../config/init.php');
-
     $username= $_POST['username'];
     $password= $_POST['password'];
-
     $userid = 0;
-
     function correctLogin($user, $pass){
         $isValid = false;
         global $dataB;
@@ -15,7 +12,6 @@
             //$statement->bindParam(":pass", $passhash);
             
             $statement->execute(array($user, $passhash));
-
             $res = $statement->fetchAll();
             global $userid;
             $userid = $res[0]["userid"];
@@ -29,7 +25,6 @@
     }
    
     if(correctLogin($username, $password) == true){
-
         $_SESSION['username'] = $username;
         $statement = $dataB->prepare("SELECT * from UserPermissions 
         INNER JOIN PermissionTypes on UserPermissions.permtypeid = PermissionTypes.permtypeid 
@@ -47,8 +42,8 @@
         //exit();
     }
     else{
-        $error = "password";
-        header('Location: ../../index.php?error='.$error);
+        $_SESSION['wrongCombination']="Username/Password Combination Incorrect";
+        header('Location: ../../index.php');
         exit();
     }
     

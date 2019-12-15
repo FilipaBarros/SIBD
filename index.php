@@ -16,6 +16,10 @@
         <form action="./users/actions/action_login.php" method="post">
             <p>Username: <input type="text" name="username" placeholder="Username" required></p>
             <p>Password: <input type="password" name="password" placeholder="Password" required></p>
+            <?php if(isset($_SESSION['wrongCombination'])){
+                    echo "<p>".$_SESSION['wrongCombination']."</p>";
+            }
+            ?>
             <input class="btn btn-full" type="submit" value="Login">
         </form>
     </section>
@@ -26,6 +30,10 @@
         <br>
         <form action="./users/actions/action_register.php" method="post">
             <p>Username: <input type="text" name="username" placeholder="Username" required></p>
+            <?php if(isset($_SESSION['usernameError'])){
+                    echo $_SESSION['usernameError'];
+            }
+            ?>
             <p>Password: <input type="password" name="password" placeholder="Password" required></p>
             <p>Email: <input type="email" name="emailaddress" placeholder="Email" required></p>
             <input class="btn btn-full" type="submit" value="Register">
@@ -33,4 +41,8 @@
 
     </section> 
     </div>
-<?php include ('./partials/footer.php') ?>   
+<?php 
+    unset($_SESSION['usernameError']);
+    unset($_SESSION['wrongCombination']);
+    include ('./partials/footer.php') 
+?>  
