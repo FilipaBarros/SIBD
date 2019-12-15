@@ -24,7 +24,9 @@
             echo '<a href="http://'.$RESOURCEPATH .'/devices/actions/action_associate_category.php?category='.$row['catid'].'&id='.$id.'"><p>'.$row['catname'].'</p></a>';
         }
     ?>
-    <a class='btn btn-lg' href="http://<?php echo $RESOURCEPATH ?>/devices/devices.php"><button type="button">Finish</button></a>
+    <br>
+    <br>
+    <a class='btn btn-lg' href="http://<?php echo $RESOURCEPATH ?>/devices/devices.php">Finish</a>
 </div>
 
 <?php 
