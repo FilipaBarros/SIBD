@@ -10,7 +10,7 @@ Hugo Rodrigues - up201505296@fe.up.pt
 
 ## Context:
 
-This project was developed under the course Information Systems and Databases of Faculty Faculty of Engineering of the University of Porto
+This project was developed under the course Information Systems and Databases of Faculty of Engineering of the University of Porto
 
 ## Goals of the project: 
 
