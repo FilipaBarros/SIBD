@@ -47,6 +47,8 @@ It is recommended to do this process locally in your machine.
 
 2. ```$ sqlite3 mydatabase.db < scripts/db_fill.sql```
 
+![docs/file.jpg](aoisdhoiasdh)
+
 ### Installing in [gnomo.fe.up.pt](gnomo.fe.up.pt)
 
 1. Connect to the server using a SFTP client (e.g. Filezilla or WinSCP)
@@ -63,3 +65,7 @@ It is recommended to do this process locally in your machine.
     - ```index.php``` file
 4. Access your gnomo homepage.
 
+
+## Dependencies
+
+- [Font Awesome](http://fontawesome.com/)
