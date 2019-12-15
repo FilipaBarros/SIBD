@@ -2,15 +2,18 @@
     
     require_once('../../config/init.php');
 
-    $category=$_GET['category'];
-    $devId=$_GET['id'];
+    $category=$_POST['categories'];
+    $devId=$_POST['devId'];
 
     global $dataB;
-    $statement=$dataB->prepare('INSERT INTO DevicesCategories(devid,catid) VALUES (?,?)');
-    $statement->execute(array($devId,$category));
-    print_r($statement);
+    foreach($category as $res){
+        $statement=$dataB->prepare('INSERT INTO DevicesCategories(devid,catid) VALUES (?,?)');
+        $statement->execute(array($devId,$res));
+        print_r($statement);
+    }
+    
 
-    header('Location: http://'.$RESOURCEPATH.'/devices/associate_category.php?id='.$devId);
+    header('Location: http://'.$RESOURCEPATH.'/devices/details_device.php?id='.$devId);
 
 
 
