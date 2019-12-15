@@ -72,7 +72,7 @@ It is recommended to do this process locally in your machine.
 
 ## Screenshots
 
-![docs/index.png](Index)
+![index](docs/index.png)
 
 ![docs/dashboard.png](Dashboard)
 
